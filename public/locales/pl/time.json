@@ -1,0 +1,167 @@
+{
+  "checkLeapYears": {
+    "description": "Sprawdź, czy rok jest przestępny, i uzyskaj informacje o roku przestępnym.",
+    "exampleDescription": "Jedna z naszych przyjaciółek urodziła się w roku przestępnym 29 lutego i w konsekwencji ma urodziny tylko raz na 4 lata. Ponieważ nigdy nie potrafimy zapamiętać, kiedy są jej urodziny, używamy naszego programu, aby utworzyć listę przypominającą o nadchodzących latach przestępnych. Aby utworzyć listę jej najbliższych urodzin, wczytujemy do wejścia sekwencję lat od 2025 do 2040 i sprawdzamy status każdego roku. Jeśli program mówi, że jest to rok przestępny, wiemy, że zostaniemy zaproszeni na przyjęcie urodzinowe 29 lutego.",
+    "exampleTitle": "Znajdź urodziny 29 lutego",
+    "inputTitle": "Rok wejściowy",
+    "resultTitle": "Wynik roku przestępnego",
+    "shortDescription": "Sprawdź, czy rok jest przestępny",
+    "title": "Sprawdź lata przestępne",
+    "toolInfo": {
+      "description": "Rok przestępny to rok zawierający jeden dodatkowy dzień (29 lutego), aby utrzymać synchronizację roku kalendarzowego z rokiem astronomicznym. Lata przestępne występują co 4 lata, z wyjątkiem lat podzielnych przez 100, ale niepodzielnych przez 400.",
+      "title": "Czym jest rok przestępny?"
+    }
+  },
+  "convertDaysToHours": {
+    "addHoursName": "Dodaj nazwę godzin",
+    "addHoursNameDescription": "Dołącz słowo „godziny” do wartości wynikowych",
+    "description": "Konwertuj dni na godziny z konfigurowalnymi opcjami.",
+    "hoursName": "Nazwa godzin",
+    "shortDescription": "Konwertuj dni na godziny",
+    "title": "Konwertuj dni na godziny",
+    "toolInfo": {
+      "description": "To narzędzie pozwala konwertować dni na godziny. Możesz wprowadzić dni jako liczby lub z jednostkami, a narzędzie przeliczy je na godziny. Możesz także wybrać dołączenie przyrostka „godziny” do wartości wynikowych.",
+      "title": "Konwertuj dni na godziny"
+    }
+  },
+  "convertHoursToDays": {
+    "addDaysName": "Dodaj nazwę dni",
+    "addDaysNameDescription": "Dołącz słowo „dni” do wartości wynikowych",
+    "daysName": "Nazwa dni",
+    "description": "Konwertuj godziny na dni z konfigurowalnymi opcjami.",
+    "shortDescription": "Konwertuj godziny na dni",
+    "title": "Konwertuj godziny na dni",
+    "toolInfo": {
+      "description": "To narzędzie pozwala konwertować godziny na dni. Możesz wprowadzić godziny jako liczby lub z jednostkami, a narzędzie przeliczy je na dni. Możesz także wybrać dołączenie przyrostka „dni” do wartości wynikowych.",
+      "title": "Konwertuj godziny na dni"
+    }
+  },
+  "convertSecondsToTime": {
+    "addPadding": "Dodaj dopełnienie",
+    "addPaddingDescription": "Dodaj zerowe dopełnienie do godzin, minut i sekund.",
+    "description": "Konwertuj sekundy na czytelny format czasu (godziny:minuty:sekundy). Wprowadź liczbę sekund, aby uzyskać sformatowany czas.",
+    "shortDescription": "Konwertuj sekundy na format czasu",
+    "timePadding": "Dopełnienie czasu",
+    "title": "Konwertuj sekundy na czas",
+    "toolInfo": {
+      "title": "Czym jest {{title}}?"
+    }
+  },
+  "convertTimeToDecimal": {
+    "description": "Konwertuj sformatowany czas trwania (HH:MM:SS) na dziesiętną wartość godzinową.",
+    "longDescription": "Konwertuj sformatowany ciąg czasu (HH:MM:SS lub HH:MM) na jego dziesiętny odpowiednik w godzinach. Godziny mogą być dowolną liczbą dodatnią, natomiast minuty i sekundy przyjmują wartości od 0 do 59 i mogą być jedno- lub dwucyfrowe (np. „12:5” lub „12:05”). Ta funkcja interpretuje godziny, minuty i sekundy, a następnie oblicza całkowity czas trwania jako pojedynczą wartość dziesiętną. Jest przydatna do śledzenia produktywności, obliczeń płacowych, rozliczeń opartych na czasie, analizy danych lub dowolnego procesu wymagającego konwersji czasu czytelnego dla człowieka na format liczbowy, który można łatwo sumować, porównywać lub przetwarzać. Na przykład „03:26:00” staje się 3,43 godziny, a „12:5” staje się 12,08 godziny.",
+    "shortDescription": "Konwertuj czas zegarowy na czas dziesiętny",
+    "title": "Konwertuj czas na zapis dziesiętny"
+  },
+  "convertTimeToSeconds": {
+    "description": "Konwertuj sformatowany czas (HH:MM:SS) na sekundy.",
+    "inputTitle": "Czas wejściowy",
+    "resultTitle": "Sekundy",
+    "shortDescription": "Konwertuj format czasu na sekundy",
+    "title": "Konwertuj czas na sekundy",
+    "toolInfo": {
+      "description": "To narzędzie pozwala konwertować sformatowane ciągi czasu (HH:MM:SS) na sekundy. Przydaje się do obliczania czasów trwania i odstępów czasowych.",
+      "title": "Konwertuj czas na sekundy"
+    }
+  },
+  "convertUnixToDate": {
+    "addUtcLabel": "Dodaj przyrostek „UTC”",
+    "addUtcLabelDescription": "Dołącz „UTC” po przekonwertowanej dacie (dostępne tylko w trybie UTC)",
+    "description": "Konwertuj znaczniki czasu Unix na czytelne daty i konwertuj daty z powrotem na znaczniki czasu Unix.",
+    "shortDescription": "Konwertuj znaczniki czasu Unix i daty w obu kierunkach.",
+    "title": "Konwertuj Unix ↔ data",
+    "toolInfo": {
+      "title": "Konwertuj Unix ↔ data",
+      "description": "To narzędzie konwertuje znaczniki czasu Unix (w sekundach) na czytelne formaty daty, takie jak RRRR-MM-DD HH:MM:SS, a także konwertuje sformatowane daty z powrotem na znaczniki czasu Unix. Możesz wybrać wynik w UTC, w lokalnej strefie czasowej lub podać niestandardowe przesunięcie UTC (na przykład: RRRR-MM-DD HH:MM:SS +XX:XX). Jeśli nie podano przesunięcia, a lokalna strefa czasowa nie jest wybrana, domyślnie używane jest UTC (+00:00)."
+    },
+    "useLocalTime": "Użyj czasu lokalnego",
+    "useUTC": "Użyj UTC",
+    "useLocalTimeDescription": "Wyświetl przekonwertowaną datę w Twojej lokalnej strefie czasowej zamiast UTC",
+    "tzOptions": "Opcje strefy czasowej",
+    "optionsTitle": "Tryb konwersji",
+    "date-to-unix": "Data → Unix",
+    "unix-to-date": "Unix → data"
+  },
+  "crontabGuru": {
+    "title": "Crontab Guru",
+    "description": "Analizuj i objaśniaj wyrażenia cron prostym językiem. Natychmiast zrozum, co robi dowolny harmonogram cron, sprawdź poprawność składni i przetwarzaj wiele wyrażeń naraz.",
+    "shortDescription": "Analizuj i objaśniaj wyrażenia cron prostym językiem",
+    "longDescription": "Crontab Guru to parser i walidator wyrażeń cron, który tłumaczy złożoną składnię cron na proste, czytelne dla człowieka opisy. Niezależnie od tego, czy planujesz automatyczne kopie zapasowe, zadania konserwacji systemu czy potoki CI/CD, to narzędzie pomaga zrozumieć dokładnie, kiedy uruchomią się Twoje zadania. Obsługuje standardowe 5-polowe wyrażenia cron, sprawdza poprawność składni w czasie rzeczywistym i przetwarza wiele wyrażeń naraz — po jednym w wierszu. Dostępne w językach: angielskim, francuskim, hiszpańskim, niemieckim, japońskim, chińskim, portugalskim, niderlandzkim i rosyjskim."
+  },
+  "timeBetweenDates": {
+    "description": "Oblicz różnicę czasu między dwiema datami. Uzyskaj dokładny czas trwania w dniach, godzinach, minutach i sekundach.",
+    "endDate": "Data końcowa",
+    "endDateTime": "Data i godzina końcowa",
+    "endTime": "Godzina końcowa",
+    "endTimezone": "Strefa czasowa końcowa",
+    "shortDescription": "Oblicz czas między dwiema datami",
+    "startDate": "Data początkowa",
+    "startDateTime": "Data i godzina początkowa",
+    "startTime": "Godzina początkowa",
+    "startTimezone": "Strefa czasowa początkowa",
+    "title": "Czas między datami",
+    "toolInfo": {
+      "description": "Oblicz dokładną różnicę czasu między dwiema datami i godzinami, z obsługą różnych stref czasowych. To narzędzie przedstawia szczegółowy rozkład różnicy czasu w różnych jednostkach (lata, miesiące, dni, godziny, minuty i sekundy).",
+      "title": "Kalkulator czasu między datami"
+    }
+  },
+  "truncateClockTime": {
+    "description": "Obcinaj czas zegarowy, aby usunąć sekundy lub minuty. Zaokrąglaj czas do najbliższej godziny, minuty lub niestandardowego interwału.",
+    "printDroppedComponents": "Wyświetl pominięte składniki",
+    "shortDescription": "Obcinaj czas zegarowy do określonej precyzji",
+    "timePadding": "Dopełnienie czasu",
+    "title": "Obcinaj czas zegarowy",
+    "toolInfo": {
+      "title": "Czym jest {{title}}?"
+    },
+    "truncateMinutesAndSeconds": "Obetnij minuty i sekundy",
+    "truncateMinutesAndSecondsDescription": "Usuń oba składniki – minuty i sekundy z każdego czasu zegarowego.",
+    "truncateOnlySeconds": "Obetnij tylko sekundy",
+    "truncateOnlySecondsDescription": "Usuń składnik sekund z każdego czasu zegarowego.",
+    "truncationSide": "Strona obcinania",
+    "useZeroPadding": "Użyj zerowego dopełnienia",
+    "zeroPaddingDescription": "Spraw, aby wszystkie składniki czasu zawsze miały szerokość dwóch cyfr.",
+    "zeroPrintDescription": "Wyświetlaj pominięte części jako wartości zerowe „00”.",
+    "zeroPrintTruncatedParts": "Wyświetlaj obcięte części jako zera"
+  },
+  "discordTimestamp": {
+    "name": "Generator znaczników czasu Discord",
+    "description": "Konwertuj daty i godziny na specjalny format znaczników czasu Discord, który automatycznie dostosowuje się do lokalnej strefy czasowej i języka każdego użytkownika",
+    "shortDescription": "Generuj znaczniki czasu Discord z dat",
+    "inputTitle": "Wejściowe daty i godziny",
+    "outputTitle": "Znaczniki czasu Discord",
+    "formats": {
+      "title": "Format znacznika czasu",
+      "description": "Wybierz, jak znacznik czasu będzie wyświetlany w Discordzie — najedź na każdą opcję, aby zobaczyć przykład",
+      "short_time": "Krótka godzina (np. 14:30)",
+      "long_time": "Długa godzina (np. 14:30:00)",
+      "short_date": "Krótka data (np. 01.01.2025)",
+      "long_date": "Długa data (np. 1 stycznia 2025)",
+      "short_datetime": "Krótka data i godzina (np. 1 stycznia 2025 14:30)",
+      "long_datetime": "Długa data i godzina (np. poniedziałek, 1 stycznia 2025 14:30)",
+      "relative": "Względny (np. 2 godziny temu)"
+    },
+    "utc": {
+      "title": "Opcje wejściowe",
+      "label": "Wymuś UTC",
+      "description": "Traktuj wejściowe daty i godziny jako UTC. Wyłącz, aby zamiast tego użyć lokalnej strefy czasowej"
+    },
+    "toolInfo": {
+      "title": "Czym jest znacznik czasu Discord?",
+      "description": "Znaczniki czasu Discord to specjalna składnia, która wyświetla daty i godziny dynamicznie. Zamiast pokazywać stały czas, automatycznie konwertują się do lokalnej strefy czasowej i języka każdego widza — dzięki czemu każdy widzi prawidłowy czas dla swojej lokalizacji. Wystarczy wprowadzić jedną datę i godzinę w wierszu, wybrać format i wkleić wyniki bezpośrednio do Discorda. Narzędzie przetwarza każdy wiersz niezależnie — puste wiersze są zachowywane w wyniku, nieprawidłowe wiersze są oznaczane symbolem ❌, a prawidłowe daty i godziny są konwertowane natychmiast. Włącz tryb UTC, aby zapewnić spójne wyniki niezależnie od Twojej lokalnej strefy czasowej."
+    }
+  },
+  "convertDateToUnix": {
+    "description": "Konwertuj czytelną dla człowieka datę na znacznik czasu Unix.",
+    "outputOptions": "Opcje wyniku",
+    "shortDescription": "Konwertuj datę na znacznik czasu Unix.",
+    "title": "Konwertuj datę na Unix",
+    "toolInfo": {
+      "description": "To narzędzie konwertuje czytelny dla człowieka format daty (np. RRRR-MM-DD HH:MM:SS) na znacznik czasu Unix. Użytkownik może wybrać podanie określonego przesunięcia UTC (np. RRRR-MM-DD HH:MM:SS +XX:XX) lub użycie lokalnej strefy czasowej. Jeśli użytkownik nie poda przesunięcia ani nie wybierze użycia lokalnej strefy czasowej, wynik podawany jest z przesunięciem +00:00. ",
+      "title": "Konwertuj datę na Unix"
+    },
+    "useLocalTime": "Użyj czasu lokalnego",
+    "useLocalTimeDescription": "Wejściowy czas i data są przetwarzane jako strefa czasowa Twojej przeglądarki. Dodatkowe specyfikacje zostaną zignorowane.",
+    "options": "Opcje"
+  }
+}

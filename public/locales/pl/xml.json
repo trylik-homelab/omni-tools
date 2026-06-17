@@ -1,0 +1,38 @@
+{
+  "xmlBeautifier": {
+    "description": "Formatuj XML z odpowiednimi wcięciami i odstępami.",
+    "indentation": "Wcięcie",
+    "inputTitle": "XML wejściowy",
+    "resultTitle": "Sformatowany XML",
+    "shortDescription": "Formatuj i upiększaj kod XML",
+    "title": "Formatter XML",
+    "toolInfo": {
+      "description": "To narzędzie pozwala formatować dane XML z odpowiednimi wcięciami i odstępami, czyniąc je bardziej czytelnymi i łatwiejszymi w obsłudze.",
+      "title": "Formatter XML"
+    },
+    "useSpaces": "Użyj spacji",
+    "useSpacesDescription": "Wcinaj wynik spacjami",
+    "useTabs": "Użyj tabulatorów",
+    "useTabsDescription": "Wcinaj wynik tabulatorami."
+  },
+  "xmlValidator": {
+    "description": "Sprawdzaj poprawność składni i struktury XML.",
+    "placeholder": "Wklej lub zaimportuj XML tutaj...",
+    "shortDescription": "Sprawdzaj kod XML pod kątem błędów",
+    "title": "Walidator XML",
+    "toolInfo": {
+      "description": "To narzędzie pozwala sprawdzać poprawność składni i struktury XML. Weryfikuje, czy XML jest poprawnie sformułowany, i podaje szczegółowe komunikaty o znalezionych błędach.",
+      "title": "Walidator XML"
+    }
+  },
+  "xmlViewer": {
+    "description": "Przeglądaj i eksploruj strukturę XML w formie drzewa.",
+    "inputTitle": "XML wejściowy",
+    "resultTitle": "Widok drzewa XML",
+    "title": "Przeglądarka XML",
+    "toolInfo": {
+      "description": "To narzędzie pozwala przeglądać dane XML w hierarchicznej formie drzewa, ułatwiając eksplorację i zrozumienie struktury dokumentów XML.",
+      "title": "Przeglądarka XML"
+    }
+  }
+}

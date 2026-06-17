@@ -1,0 +1,149 @@
+{
+  "addAudio": {
+    "audioFile": "Plik audio",
+    "audioInputTitle": "Audio wejściowe",
+    "description": "Łatwo dodaj ścieżkę dźwiękową do dowolnego pliku wideo. Możesz całkowicie zastąpić oryginalny dźwięk lub zmiksować nową ścieżkę z istniejącą. Dostosuj głośność, ustaw opcje zapętlenia i przytnij dźwięk z dokładnymi czasami początku i końca. Obsługuje wszystkie popularne formaty wideo i audio dla elastycznej edycji i szybkich rezultatów.",
+    "durationMode": "Zakres czasu",
+    "endTime": "Czas końcowy",
+    "endTimeDesc": "Kiedy nowy dźwięk przestaje być odtwarzany (HH:MM:SS.mm).",
+    "loadingText": "Dodawanie audio do wideo...",
+    "loop": "Zapętl (powtarzaj dźwięk aż do końca wideo lub określonego czasu końcowego)",
+    "loopOption": "Opcje zapętlenia",
+    "mode": "Tryb audio",
+    "modeMix": "Miksuj (zachowaj oryginał + dodaj nowy)",
+    "modeReplace": "Zastąp oryginalny dźwięk",
+    "noLoop": "Bez zapętlenia (odtwórz dźwięk tylko raz)",
+    "resultTitle": "Przetworzone wideo",
+    "shortDescription": "Dodaj lub zastąp ścieżkę dźwiękową w wideo",
+    "startTime": "Czas początkowy",
+    "startTimeDesc": "Kiedy nowy dźwięk zaczyna być odtwarzany (HH:MM:SS.mm).",
+    "timing": "Synchronizacja audio",
+    "timingDefault": "Domyślnie (całe wideo)",
+    "timingEnd": "Ustaw czas końcowy",
+    "timingModeDesc": "Wybierz, kiedy nowy dźwięk ma być odtwarzany na osi czasu wideo.",
+    "timingStart": "Ustaw czas początkowy",
+    "timingStartEnd": "Ustaw czas początkowy i końcowy",
+    "title": "Dodaj audio do wideo",
+    "videoInputTitle": "Wideo wejściowe",
+    "volume": "Głośność nowego audio",
+    "volumeDesc": "Poziom głośności dla nowej ścieżki dźwiękowej."
+  },
+  "changeSpeed": {
+    "defaultMultiplier": "Domyślny mnożnik: 2 oznacza 2x szybciej",
+    "description": "Zmień prędkość odtwarzania plików wideo. Przyspiesz lub spowolnij filmy, zachowując synchronizację dźwięku. Obsługuje różne mnożniki prędkości i popularne formaty wideo.",
+    "inputTitle": "Wideo wejściowe",
+    "newVideoSpeed": "Nowa prędkość wideo",
+    "resultTitle": "Edytowane wideo",
+    "settingSpeed": "Ustawianie prędkości",
+    "shortDescription": "Zmień prędkość odtwarzania wideo",
+    "title": "Zmień prędkość wideo",
+    "toolInfo": {
+      "title": "Czym jest {{title}}?"
+    }
+  },
+  "compress": {
+    "default": "Domyślna",
+    "description": "Kompresuj filmy, skalując je do różnych rozdzielczości, takich jak 240p, 480p, 720p itd. To narzędzie pomaga zmniejszyć rozmiar pliku przy zachowaniu akceptowalnej jakości. Obsługuje popularne formaty wideo, takie jak MP4, WebM i OGG.",
+    "inputTitle": "Wideo wejściowe",
+    "loadingText": "Kompresowanie wideo...",
+    "lossless": "Bezstratna",
+    "quality": "Jakość (CRF)",
+    "resolution": "Rozdzielczość",
+    "resultTitle": "Skompresowane wideo",
+    "shortDescription": "Kompresuj filmy poprzez skalowanie do różnych rozdzielczości",
+    "title": "Kompresuj wideo",
+    "worst": "Najgorsza"
+  },
+  "cropVideo": {
+    "cropCoordinates": "Współrzędne przycięcia",
+    "croppingVideo": "Przycinanie wideo",
+    "description": "Przytnij wideo, aby usunąć niechciane obszary.",
+    "errorBeyondHeight": "Obszar przycięcia wykracza poza wysokość wideo ({{height}}px)",
+    "errorBeyondWidth": "Obszar przycięcia wykracza poza szerokość wideo ({{width}}px)",
+    "errorCroppingVideo": "Błąd podczas przycinania wideo. Sprawdź parametry i plik wideo.",
+    "errorLoadingDimensions": "Nie udało się wczytać wymiarów wideo",
+    "errorNonNegativeCoordinates": "Współrzędne X i Y nie mogą być ujemne",
+    "errorPositiveDimensions": "Szerokość i wysokość muszą być dodatnie",
+    "height": "Wysokość",
+    "inputTitle": "Wideo wejściowe",
+    "loadVideoForDimensions": "Wczytaj wideo, aby zobaczyć wymiary",
+    "longDescription": "To narzędzie pozwala przycinać pliki wideo, aby usunąć niechciane obszary lub skupić się na określonych częściach filmu. Przydatne do usuwania czarnych pasów, dostosowywania proporcji obrazu lub skupienia się na ważnej treści. Obsługuje różne formaty wideo, w tym MP4, MOV i AVI.",
+    "resultTitle": "Przycięte wideo",
+    "shortDescription": "Przytnij wideo, aby usunąć niechciane obszary",
+    "title": "Przytnij wideo",
+    "toolInfo": {
+      "description": "To narzędzie pozwala przycinać pliki wideo, aby usunąć niechciane obszary. Obszar przycięcia możesz określić, ustawiając współrzędne X, Y oraz wymiary szerokości i wysokości.",
+      "title": "Przytnij wideo"
+    },
+    "videoDimensions": "Wymiary wideo: {{width}} × {{height}} pikseli",
+    "videoInformation": "Informacje o wideo",
+    "width": "Szerokość",
+    "xCoordinate": "X (od lewej)",
+    "yCoordinate": "Y (od góry)"
+  },
+  "flip": {
+    "description": "Odbij pliki wideo poziomo lub pionowo. Twórz lustrzane odbicia filmów dla efektów specjalnych lub popraw problemy z orientacją.",
+    "flippingVideo": "Odbijanie wideo",
+    "horizontalLabel": "Poziomo (lustrzane odbicie)",
+    "inputTitle": "Wideo wejściowe",
+    "orientation": "Orientacja",
+    "resultTitle": "Odbite wideo",
+    "shortDescription": "Odbij wideo poziomo lub pionowo",
+    "title": "Odbij wideo",
+    "verticalLabel": "Pionowo (do góry nogami)"
+  },
+  "gif": {
+    "changeSpeed": {
+      "description": "Zmień prędkość odtwarzania animacji GIF. Przyspiesz lub spowolnij GIF-y, zachowując płynność animacji.",
+      "shortDescription": "Zmień prędkość animacji GIF",
+      "title": "Zmień prędkość GIF"
+    }
+  },
+  "loop": {
+    "description": "Utwórz zapętlone wideo, powtarzając oryginalny film wielokrotnie.",
+    "inputTitle": "Wideo wejściowe",
+    "loopingVideo": "Zapętlanie wideo",
+    "loops": "Pętle",
+    "numberOfLoops": "Liczba pętli",
+    "resultTitle": "Zapętlone wideo",
+    "shortDescription": "Twórz zapętlone pliki wideo",
+    "title": "Zapętl wideo",
+    "toolInfo": {
+      "description": "To narzędzie pozwala utworzyć zapętlone wideo poprzez wielokrotne powtórzenie oryginalnego filmu. Możesz określić, ile razy wideo ma się zapętlić.",
+      "title": "Czym jest {{title}}?"
+    }
+  },
+  "mergeVideo": {
+    "description": "Połącz wiele plików wideo w jeden ciągły film.",
+    "longDescription": "To narzędzie pozwala scalić lub dołączyć wiele plików wideo w jeden ciągły film. Wystarczy wgrać pliki wideo, ułożyć je w żądanej kolejności i scalić w jeden plik dla łatwego udostępniania lub edycji.",
+    "shortDescription": "Łatwo dołączaj i scalaj filmy.",
+    "title": "Scal filmy"
+  },
+  "rotate": {
+    "180Degrees": "180° (do góry nogami)",
+    "270Degrees": "270° (90° przeciwnie do ruchu wskazówek zegara)",
+    "90Degrees": "90° zgodnie z ruchem wskazówek zegara",
+    "description": "Obracaj pliki wideo o 90, 180 lub 270 stopni. Popraw orientację wideo lub twórz efekty specjalne z precyzyjną kontrolą obrotu.",
+    "inputTitle": "Wideo wejściowe",
+    "resultTitle": "Obrócone wideo",
+    "rotatingVideo": "Obracanie wideo",
+    "rotation": "Obrót",
+    "shortDescription": "Obróć wideo o określoną liczbę stopni",
+    "title": "Obróć wideo"
+  },
+  "trim": {
+    "description": "Przycinaj pliki wideo, podając czas początkowy i końcowy. Usuń niechciane fragmenty z początku lub końca filmów.",
+    "endTime": "Czas końcowy",
+    "inputTitle": "Wideo wejściowe",
+    "resultTitle": "Przycięte wideo",
+    "shortDescription": "Przytnij wideo, usuwając niechciane fragmenty",
+    "startTime": "Czas początkowy",
+    "timestamps": "Znaczniki czasu",
+    "title": "Przytnij wideo"
+  },
+  "videoToGif": {
+    "description": "Konwertuj pliki wideo do animowanego formatu GIF. Wyodrębniaj określone zakresy czasu i twórz animowane obrazy do udostępniania.",
+    "shortDescription": "Konwertuj wideo na animowany GIF",
+    "title": "Wideo na GIF"
+  }
+}

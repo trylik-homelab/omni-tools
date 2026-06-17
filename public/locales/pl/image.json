@@ -1,0 +1,178 @@
+{
+  "changeColors": {
+    "description": "Zmień określone kolory na obrazie, wybierając kolor źródłowy i zastępując go nowym.",
+    "shortDescription": "Szybko zamień kolory na obrazie",
+    "title": "Zmień kolory na obrazie",
+    "inputTitle": "Obraz wejściowy",
+    "resultTitle": "Obraz wynikowy",
+    "fromColor": {
+      "title": "Z koloru",
+      "colorOption": "Zastąp określony kolor",
+      "transparentOption": "Zastąp przezroczyste piksele",
+      "selectorDescription": "Zastąp ten kolor (kolor źródłowy)",
+      "similarityDescription": "Dopasuj ten % podobnych kolorów do koloru źródłowego. Na przykład 10% bieli dopasuje biel i odrobinę szarości."
+    },
+    "toColor": {
+      "title": "Na kolor",
+      "colorOption": "Zastąp określonym kolorem",
+      "transparentOption": "Zastąp przezroczystością",
+      "selectorDescription": "Tym kolorem (kolor docelowy)"
+    }
+  },
+  "changeOpacity": {
+    "description": "Łatwo dostosuj przezroczystość swoich obrazów. Wystarczy wgrać obraz, użyć suwaka, aby ustawić żądany poziom krycia między 0 (całkowicie przezroczysty) a 1 (całkowicie nieprzezroczysty), i pobrać zmodyfikowany obraz.",
+    "shortDescription": "Dostosuj przezroczystość obrazów",
+    "title": "Zmień krycie obrazu"
+  },
+  "compress": {
+    "compressedSize": "Łączny rozmiar po kompresji",
+    "compressing": "Kompresowanie obrazów...",
+    "compressionOptions": "Opcje kompresji",
+    "description": "Zmniejsz rozmiar pliku jednego lub wielu obrazów przy zachowaniu jakości wizualnej. Wgraj partię obrazów i pobierz je wszystkie naraz jako archiwum ZIP.",
+    "failedToCompress": "Kompresja obrazu/obrazów nie powiodła się. Spróbuj ponownie.",
+    "fileSizes": "Rozmiary plików",
+    "inputTitle": "Obrazy wejściowe",
+    "maxFileSizeDescription": "Maksymalny rozmiar pliku wyjściowego na obraz w megabajtach",
+    "originalSize": "Łączny rozmiar oryginału",
+    "qualityDescription": "Procentowa jakość obrazu — niższa wartość oznacza mniejszy rozmiar pliku",
+    "resultTitle": "Skompresowane obrazy",
+    "shortDescription": "Skompresuj jeden lub wiele obrazów naraz.",
+    "someFailedToCompress": "Niektórych obrazów nie udało się skompresować i zostały pominięte.",
+    "title": "Kompresuj obrazy"
+  },
+  "compressPng": {
+    "description": "To program, który kompresuje obrazy PNG. Gdy tylko wkleisz obraz PNG w obszarze wejściowym, program go skompresuje i wyświetli wynik w obszarze wyjściowym. W opcjach możesz dostosować poziom kompresji oraz sprawdzić stary i nowy rozmiar pliku obrazu.",
+    "shortDescription": "Szybko skompresuj plik PNG",
+    "title": "Kompresuj PNG"
+  },
+  "convertJgpToPng": {
+    "description": "Szybko konwertuj swoje obrazy JPG do PNG. Wystarczy zaimportować obraz w edytorze po lewej stronie",
+    "shortDescription": "Szybko konwertuj swoje obrazy JPG do PNG",
+    "title": "Konwertuj JPG na PNG"
+  },
+  "createTransparent": {
+    "description": "Utwórz przezroczystą wersję obrazu, usuwając wybrany kolor tła.",
+    "shortDescription": "Szybko uczyń obraz przezroczystym",
+    "title": "Utwórz przezroczysty PNG"
+  },
+  "crop": {
+    "description": "Przycinaj obrazy, aby usunąć niechciane obszary.",
+    "inputTitle": "Obraz wejściowy",
+    "resultTitle": "Przycięty obraz",
+    "shortDescription": "Przycinaj obrazy szybko.",
+    "title": "Przytnij obraz"
+  },
+  "editor": {
+    "description": "Zaawansowany edytor obrazów z narzędziami do przycinania, obracania, dodawania adnotacji, regulacji kolorów i dodawania znaków wodnych. Edytuj swoje obrazy profesjonalnymi narzędziami bezpośrednio w przeglądarce.",
+    "shortDescription": "Edytuj obrazy zaawansowanymi narzędziami i funkcjami",
+    "title": "Edytor obrazów"
+  },
+  "imageToText": {
+    "description": "Wyodrębniaj tekst z obrazów (JPG, PNG) za pomocą optycznego rozpoznawania znaków (OCR).",
+    "shortDescription": "Wyodrębniaj tekst z obrazów za pomocą OCR.",
+    "title": "Obraz na tekst (OCR)"
+  },
+  "qrCode": {
+    "description": "Generuj kody QR dla różnych typów danych: URL, tekst, e-mail, telefon, SMS, WiFi, vCard i więcej.",
+    "options": {
+      "address": "Adres",
+      "company": "Firma (opcjonalnie)",
+      "email": "E-mail",
+      "emailBody": "Treść e-maila (opcjonalnie)",
+      "emailSubject": "Temat e-maila (opcjonalnie)",
+      "encryptionType": "Typ szyfrowania",
+      "fullName": "Imię i nazwisko",
+      "job": "Stanowisko (opcjonalnie)",
+      "message": "Wiadomość (opcjonalnie)",
+      "name": "Nazwa",
+      "password": "Hasło",
+      "phone": "Numer telefonu",
+      "qrType": "Wybierz typ kodu QR",
+      "size": "Rozmiar w pikselach (100-1000)",
+      "ssid": "Nazwa sieci (SSID)",
+      "text": "Wprowadź tekst",
+      "url": "Wprowadź adres URL",
+      "website": "Strona internetowa (opcjonalnie)"
+    },
+    "resultOutput": "Wygenerowany kod QR",
+    "shortDescription": "Twórz spersonalizowane kody QR dla różnych formatów danych.",
+    "title": "Generator kodów QR"
+  },
+  "removeBackground": {
+    "description": "Usuń tło z obrazu, aby wyizolować główny obiekt z przezroczystością.",
+    "shortDescription": "Automatycznie usuwaj tło z obrazów",
+    "title": "Usuń tło z obrazu"
+  },
+  "resize": {
+    "description": "Zmieniaj rozmiar obrazów według wymiarów w pikselach lub skalowania procentowego. Zachowaj proporcje i ustaw szerokość lub wysokość z automatyczną korektą. Pobieraj wyniki pojedynczo lub jako archiwum ZIP.",
+    "dimensionType": "Typ wymiaru",
+    "heightDescription": "Wysokość (w pikselach)",
+    "inputTitle": "Obrazy wejściowe",
+    "maintainAspectRatio": "Zachowaj proporcje",
+    "maintainAspectRatioDescription": "Zachowaj oryginalne proporcje obrazu.",
+    "percentage": "Procent",
+    "percentageDescription": "Procent oryginalnego rozmiaru (np. 50 dla połowy, 200 dla podwójnego rozmiaru)",
+    "resizeByPercentage": "Zmień rozmiar procentowo",
+    "resizeByPercentageDescription": "Zmień rozmiar, podając procent oryginalnego rozmiaru.",
+    "resizeByPixels": "Zmień rozmiar w pikselach",
+    "resizeByPixelsDescription": "Zmień rozmiar, podając wymiary w pikselach.",
+    "resizeMethod": "Metoda zmiany rozmiaru",
+    "resultTitle": "Obraz(y) o zmienionym rozmiarze",
+    "setHeight": "Ustaw wysokość",
+    "setHeightDescription": "Podaj wysokość w pikselach, a szerokość zostanie obliczona na podstawie proporcji.",
+    "setWidth": "Ustaw szerokość",
+    "setWidthDescription": "Podaj szerokość w pikselach, a wysokość zostanie obliczona na podstawie proporcji.",
+    "shortDescription": "Zmień rozmiar jednego lub wielu obrazów naraz.",
+    "title": "Zmień rozmiar obrazu",
+    "toolInfo": {
+      "description": "To narzędzie pozwala zmieniać rozmiar jednego lub wielu obrazów JPG, PNG, SVG lub GIF naraz. Wgraj pojedynczy obraz lub partię obrazów i zmień ich rozmiar, podając wymiary w pikselach lub procentowo, z opcją zachowania oryginalnych proporcji. Podczas przetwarzania wielu obrazów wyniki są pakowane do pliku ZIP dla łatwego pobrania.",
+      "title": "Zmień rozmiar obrazu/obrazów"
+    },
+    "widthDescription": "Szerokość (w pikselach)"
+  },
+  "rotate": {
+    "description": "Obróć obraz o określony kąt.",
+    "shortDescription": "Obracaj obraz z łatwością.",
+    "title": "Obróć obraz"
+  },
+  "split": {
+    "title": "Podziel obraz na strony",
+    "shortDescription": "Podziel duży obraz na wiele stron (PDF).",
+    "description": "Podziel mapę lub duży obraz na strony pasujące do wybranego formatu papieru i marginesu. Określ liczbę pikseli na kratkę drukowania oraz liczbę kratek, aby poprawnie przeskalować obraz.",
+    "inputTitle": "Obraz wejściowy",
+    "resultTitle": "Podzielony PDF",
+    "loadingText": "Ładowanie... To może chwilę potrwać.",
+    "pageParameters": {
+      "title": "Parametry strony",
+      "selectPageFormat": "Wybierz format strony",
+      "padding": {
+        "label": "Margines",
+        "description": "Margines wokół mapy na każdej stronie (w wybranych jednostkach)"
+      }
+    },
+    "scaleParameters": {
+      "title": "Parametry skali",
+      "pxPerSquareQuantity": {
+        "label": "Piksele na liczbę kratek",
+        "description": "Ile pikseli odpowiada określonej liczbie kratek na oryginalnym obrazie (poziomo lub pionowo)"
+      },
+      "squareQuantity": {
+        "label": "Liczba kratek",
+        "description": "Liczba kratek w poprzek (poziomo lub pionowo) używana do skalowania"
+      },
+      "unitsPerOneSquare": {
+        "label": "Jednostki na kratkę",
+        "description": "Fizyczny rozmiar jednej kratki w wybranych jednostkach"
+      }
+    },
+    "units": {
+      "title": "Jednostki",
+      "select": "Wybierz jednostki miary",
+      "options": {
+        "pt": "Punkty (pt)",
+        "mm": "Milimetry (mm)",
+        "in": "Cale (in)"
+      }
+    }
+  }
+}

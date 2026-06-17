@@ -1,0 +1,110 @@
+{
+  "comparison": {
+    "description": "Porównaj dwa obiekty JSON, aby zidentyfikować różnice w strukturze i wartościach.",
+    "shortDescription": "Znajdź różnice między dwoma obiektami JSON",
+    "title": "Porównaj JSON"
+  },
+  "escapeJson": {
+    "description": "Zabezpiecz znaki specjalne w ciągach JSON. Przekształć dane JSON do poprawnie zabezpieczonego formatu na potrzeby bezpiecznej transmisji lub przechowywania.",
+    "shortDescription": "Zabezpiecz znaki specjalne w JSON",
+    "title": "Zabezpiecz znaki JSON"
+  },
+  "jsonToCsv": {
+    "delimiterOption": "Separator",
+    "description": "Konwertuj dane JSON do formatu CSV. Obsługuje zagnieżdżone obiekty i tablice, automatyczne wykrywanie nagłówków oraz konfigurowalne separatory i cudzysłowy — gotowe do Excela, Arkuszy Google lub dowolnej aplikacji arkusza kalkulacyjnego.",
+    "headerOption": "Nagłówki",
+    "inputTitle": "JSON wejściowy",
+    "options": {
+      "alwaysQuote": {
+        "description": "Otaczaj każdą komórkę cudzysłowami niezależnie od jej zawartości.",
+        "label": "Zawsze w cudzysłowie"
+      },
+      "autoQuote": {
+        "description": "Otaczaj cudzysłowami tylko te komórki, które zawierają separator, cudzysłów lub znak nowej linii. Utrzymuje czysty i minimalny wynik.",
+        "label": "Automatycznie (zalecane)"
+      },
+      "delimiter": "Znak używany do oddzielania wartości w każdym wierszu (np. przecinek, średnik, tabulator)",
+      "header": {
+        "description": "Użyj kluczy JSON jako nazw kolumn w pierwszym wierszu. Zalecane dla czytelności i zgodności przy imporcie.",
+        "label": "Dołącz wiersz nagłówka"
+      }
+    },
+    "outputTitle": "Wyjściowy CSV",
+    "quotingOption": "Cudzysłowy dla ciągów",
+    "shortDescription": "Konwertuj JSON do formatu CSV",
+    "title": "JSON na CSV"
+  },
+  "jsonToXml": {
+    "description": "Konwertuj dane JSON do formatu XML. Przekształć ustrukturyzowane obiekty JSON w poprawnie sformułowane dokumenty XML.",
+    "shortDescription": "Konwertuj JSON do formatu XML",
+    "title": "JSON na XML"
+  },
+  "minify": {
+    "description": "Usuń wszystkie zbędne białe znaki z JSON.",
+    "inputTitle": "JSON wejściowy",
+    "resultTitle": "Zminimalizowany JSON",
+    "shortDescription": "Minimalizuj JSON poprzez usuwanie białych znaków",
+    "title": "Minimalizuj JSON",
+    "toolInfo": {
+      "description": "Minimalizacja JSON to proces usuwania wszystkich zbędnych białych znaków z danych JSON przy zachowaniu ich poprawności. Obejmuje to usuwanie spacji, znaków nowej linii i wcięć, które nie są wymagane do poprawnego przetworzenia JSON. Minimalizacja zmniejsza rozmiar danych JSON, czyniąc je bardziej wydajnymi w przechowywaniu i transmisji, przy zachowaniu dokładnie tej samej struktury danych i wartości.",
+      "title": "Czym jest minimalizacja JSON?"
+    }
+  },
+  "prettify": {
+    "description": "Formatuj JSON z odpowiednimi wcięciami i odstępami.",
+    "indentation": "Wcięcie",
+    "inputTitle": "JSON wejściowy",
+    "resultTitle": "Sformatowany JSON",
+    "shortDescription": "Formatuj i upiększaj kod JSON",
+    "title": "Sformatuj JSON",
+    "toolInfo": {
+      "description": "To narzędzie pozwala formatować dane JSON z odpowiednimi wcięciami i odstępami, czyniąc je bardziej czytelnymi i łatwiejszymi w obsłudze.",
+      "title": "Sformatuj JSON"
+    },
+    "useSpaces": "Użyj spacji",
+    "useSpacesDescription": "Wcinaj wynik spacjami",
+    "useTabs": "Użyj tabulatorów",
+    "useTabsDescription": "Wcinaj wynik tabulatorami."
+  },
+  "stringify": {
+    "description": "Konwertuj obiekty JavaScript do formatu ciągu JSON. Serializuj struktury danych w ciągi JSON na potrzeby przechowywania lub transmisji.",
+    "shortDescription": "Konwertuj obiekty na ciąg JSON",
+    "title": "Konwertuj na ciąg JSON"
+  },
+  "tsvToJson": {
+    "description": "Konwertuj dane TSV (wartości rozdzielane tabulatorami) do formatu JSON. Przekształć dane tabelaryczne w ustrukturyzowane obiekty JSON.",
+    "shortDescription": "Konwertuj TSV do formatu JSON",
+    "title": "TSV na JSON"
+  },
+  "validateJson": {
+    "description": "Sprawdź, czy JSON jest prawidłowy i poprawnie sformułowany.",
+    "inputTitle": "JSON wejściowy",
+    "invalidJson": "❌ {{error}}",
+    "resultTitle": "Wynik walidacji",
+    "shortDescription": "Sprawdzaj kod JSON pod kątem błędów",
+    "title": "Sprawdź JSON",
+    "toolInfo": {
+      "description": "JSON (JavaScript Object Notation) to lekki format wymiany danych. Walidacja JSON zapewnia, że struktura danych jest zgodna ze standardem JSON. Prawidłowy obiekt JSON musi mieć: - Nazwy właściwości ujęte w cudzysłowy. - Poprawnie zbilansowane nawiasy klamrowe {}. - Brak przecinka po ostatniej parze klucz-wartość. - Poprawne zagnieżdżenie obiektów i tablic. To narzędzie sprawdza wprowadzony JSON i przekazuje informacje zwrotne, które pomagają zidentyfikować i naprawić typowe błędy.",
+      "title": "Czym jest walidacja JSON?"
+    },
+    "validJson": "✅ Prawidłowy JSON"
+  },
+  "sortJson": {
+    "title": "Sortuj JSON",
+    "description": "Sortuj dane JSON, porządkując tablice obiektów według wybranego klucza rosnąco lub malejąco, albo alfabetycznie sortuj klucze obiektu JSON.",
+    "shortDescription": "Sortuj tablice JSON według wartości lub klucze obiektu alfabetycznie",
+    "longDescription": "To narzędzie pozwala łatwo sortować dane JSON w ustrukturyzowany i przewidywalny sposób. Możesz sortować tablicę obiektów według dowolnego klucza, wybierając porządek rosnący lub malejący, co przydaje się do porządkowania danych, takich jak listy użytkowników, produktów czy rekordów. Alternatywnie możesz alfabetycznie posortować klucze obiektu JSON, aby poprawić czytelność i spójność. Narzędzie obsługuje elastyczne tryby sortowania i radzi sobie z typowymi strukturami JSON, co czyni je idealnym dla programistów, analityków danych i wszystkich pracujących z danymi JSON, którzy potrzebują czytelnego, uporządkowanego wyniku.",
+    "inputTitle": "JSON wejściowy",
+    "resultTitle": "Posortowany JSON",
+    "options": {
+      "title": "Opcje sortowania",
+      "sortByKey": "Sortuj klucze obiektu alfabetycznie",
+      "sortByValue": "Sortuj tablicę według wartości klucza",
+      "ascending": "Rosnąco (A → Z)",
+      "descending": "Malejąco (Z → A)",
+      "modeDescription": "Wybierz, czy sortować elementy tablicy według wartości klucza, czy sortować klucze obiektu alfabetycznie",
+      "keyDescription": "Wybierz klucz, według którego chcesz sortować",
+      "orderDescription": "Wybierz kolejność sortowania"
+    }
+  }
+}

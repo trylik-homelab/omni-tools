@@ -1,0 +1,61 @@
+{
+  "changeSpeed": {
+    "description": "Zmień prędkość odtwarzania plików audio. Przyspiesz lub spowolnij dźwięk, zachowując wysokość tonu.",
+    "inputTitle": "Audio wejściowe",
+    "newAudioSpeed": "Nowa prędkość audio",
+    "outputFormat": "Format wyjściowy",
+    "resultTitle": "Edytowane audio",
+    "settingSpeed": "Ustawianie prędkości",
+    "shortDescription": "Zmień prędkość plików audio",
+    "speedDescription": "Domyślny mnożnik: 2 oznacza 2x szybciej",
+    "title": "Zmień prędkość audio",
+    "toolInfo": {
+      "title": "Czym jest {{title}}?"
+    }
+  },
+  "extractAudio": {
+    "description": "Wyodrębnij ścieżkę dźwiękową z plików wideo.",
+    "extractingAudio": "Wyodrębnianie audio",
+    "inputTitle": "Wideo wejściowe",
+    "outputFormat": "Format wyjściowy",
+    "outputFormatDescription": "Wybierz format, w jakim ma zostać wyodrębnione audio.",
+    "resultTitle": "Wyodrębnione audio",
+    "shortDescription": "Wyodrębnij dźwięk z plików wideo (MP4, MOV itp.) do AAC, MP3 lub WAV.",
+    "title": "Wyodrębnij audio z wideo",
+    "toolInfo": {
+      "description": "To narzędzie pozwala wyodrębnić ścieżkę dźwiękową z plików wideo. Możesz wybrać spośród różnych formatów audio, w tym AAC, MP3 i WAV.",
+      "title": "Czym jest {{title}}?"
+    }
+  },
+  "mergeAudio": {
+    "description": "Połącz wiele plików audio w jeden plik, łącząc je kolejno w sekwencji.",
+    "inputTitle": "Wejściowe pliki audio",
+    "longDescription": "To narzędzie pozwala scalić wiele plików audio w jeden plik, łącząc je w kolejności, w jakiej je wgrywasz. Idealne do łączenia fragmentów podcastów, utworów muzycznych lub dowolnych plików audio, które trzeba połączyć. Obsługuje różne formaty audio, w tym MP3, AAC i WAV.",
+    "mergingAudio": "Scalanie audio",
+    "outputFormat": "Format wyjściowy",
+    "resultTitle": "Scalone audio",
+    "shortDescription": "Scal wiele plików audio w jeden (MP3, AAC, WAV).",
+    "title": "Scal audio",
+    "toolInfo": {
+      "title": "Czym jest {{title}}?"
+    }
+  },
+  "trim": {
+    "description": "Wycinaj i przycinaj pliki audio, aby wyodrębnić określone fragmenty, podając czas początkowy i końcowy z dokładnością do ułamków sekundy.",
+    "endTime": "Czas końcowy",
+    "endTimeDescription": "Czas końcowy w formacie HH:MM:SS.mmm (np. 00:01:30.450)",
+    "inputTitle": "Audio wejściowe",
+    "longDescription": "To narzędzie pozwala przycinać pliki audio poprzez podanie czasu początkowego i końcowego z dokładnością do ułamków sekundy. Możesz wyodrębniać określone fragmenty z dłuższych plików audio, usuwać niechciane części lub tworzyć krótsze klipy. Obsługuje różne formaty audio, w tym MP3, AAC i WAV. Idealne do edycji podcastów, produkcji muzycznej lub dowolnych potrzeb edycji dźwięku.",
+    "outputFormat": "Format wyjściowy",
+    "resultTitle": "Przycięte audio",
+    "shortDescription": "Przycinaj pliki audio, aby wyodrębnić określone fragmenty czasowe z dokładnością do ułamków sekundy (MP3, AAC, WAV).",
+    "startTime": "Czas początkowy",
+    "startTimeDescription": "Czas początkowy w formacie HH:MM:SS.mmm (np. 00:00:30.820)",
+    "timeSettings": "Ustawienia czasu",
+    "title": "Przytnij audio",
+    "toolInfo": {
+      "title": "Czym jest {{title}}?"
+    },
+    "trimmingAudio": "Przycinanie audio"
+  }
+}

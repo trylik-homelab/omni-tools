@@ -1,0 +1,40 @@
+{
+  "audioConverter": {
+    "description": "Konwertuj pliki audio między różnymi formatami.",
+    "inputTitle": "Plik audio wejściowy",
+    "longDescription": "To narzędzie pozwala konwertować pliki audio z jednego formatu na inny, obsługując szeroki zakres formatów audio dla płynnej konwersji.",
+    "outputFormat": "Format wyjściowy",
+    "outputFormatDescription": "Wybierz żądany format wyjściowy audio",
+    "outputTitle": "Przekonwertowane audio",
+    "shortDescription": "Konwertuj pliki audio do różnych formatów.",
+    "title": "Konwerter audio"
+  },
+  "convertToJPG": {
+    "description": "Konwertuj różne formaty obrazów do JPG z konfigurowalnymi ustawieniami jakości i koloru tła.",
+    "failedToConvert": "Konwersja obrazu/obrazów do JPG nie powiodła się. Spróbuj ponownie.",
+    "inputTitle": "Obrazy wejściowe",
+    "options": {
+      "colorDescription": "Kolor tła (dla obrazów z przezroczystością)",
+      "quality": "Jakość konwersji:",
+      "qualityDescription": "Wyższe wartości = lepsza jakość, większy rozmiar pliku",
+      "title": "Ustawienia konwersji"
+    },
+    "resultTitle": "Obrazy JPG",
+    "shortDescription": "Konwertuj obrazy do formatu JPG z kontrolą jakości",
+    "title": "Konwertuj obrazy do JPG"
+  },
+  "convertToWebp": {
+    "description": "Konwertuj różne formaty obrazów do formatu WebP z konfigurowalnymi ustawieniami jakości i koloru tła.",
+    "failedToConvert": "Konwersja obrazu/obrazów do WebP nie powiodła się. Spróbuj ponownie.",
+    "inputTitle": "Obrazy wejściowe",
+    "options": {
+      "colorDescription": "Kolor tła (dla obrazów z przezroczystością)",
+      "quality": "Jakość konwersji:",
+      "qualityDescription": "Wyższe wartości = lepsza jakość, większy rozmiar pliku",
+      "title": "Ustawienia konwersji"
+    },
+    "resultTitle": "Obrazy WEBP",
+    "shortDescription": "Konwertuj obrazy do formatu WebP z kontrolą jakości.",
+    "title": "Konwertuj obrazy do WebP"
+  }
+}

@@ -29,8 +29,23 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    supportedLngs: ['en', 'de', 'es', 'fr', 'pt', 'ja', 'hi', 'nl', 'ru', 'zh'],
-    fallbackLng: 'en',
+    supportedLngs: [
+      'pl',
+      'en',
+      'de',
+      'es',
+      'fr',
+      'pt',
+      'ja',
+      'hi',
+      'nl',
+      'ru',
+      'zh'
+    ],
+    // Polish is the default for new visitors (Marek's audience is Polish
+    // family/friends). A visitor's explicit choice is persisted to
+    // localStorage and takes precedence on subsequent visits.
+    fallbackLng: 'pl',
     interpolation: {
       escapeValue: false // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
     },
@@ -38,6 +53,8 @@ i18n
       loadPath: '/locales/{{lng}}/{{ns}}.json'
     },
     detection: {
+      // Only honour a previously persisted choice; otherwise fall back to pl.
+      order: ['localStorage'],
       lookupLocalStorage: 'lang',
       caches: ['localStorage'] // cache the detected lang back to localStorage
     }
