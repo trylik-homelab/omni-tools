@@ -11,6 +11,16 @@
   <link href="/assets/fonts/quicksand/quick-sand.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OmniTools</title>
+  <!-- Swetrix analytics (cookieless, self-hosted at stats.trylik.pl) -->
+  <script src="https://swetrix.org/swetrix.js" defer></script>
+  <script>
+    window.addEventListener('load', function () {
+      if (window.swetrix) {
+        swetrix.init('hhhP0ku0h4EB', { apiURL: 'https://stats.trylik.pl/backend' });
+        swetrix.trackViews();
+      }
+    });
+  </script>
 </head>
 <body>
 <div id="root"></div>
