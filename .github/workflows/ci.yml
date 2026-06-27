@@ -10,7 +10,7 @@ on:
       - main
 jobs:
   test-and-build:
-    runs-on: [self-hosted, homelab]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,12 +26,7 @@ jobs:
         run: npm run build
   e2e-test:
     name: 'Playwright Tests'
-    runs-on: [self-hosted, homelab]
-    # Runs inside the official Playwright container (chromium + system deps
-    # baked into the image), so no `install --with-deps` / sudo apt is needed
-    # on the self-hosted runner.
-    container:
-      image: mcr.microsoft.com/playwright:v1.45.0-jammy
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -40,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Browsers
-        run: npx playwright install chromium
+        run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npx playwright test
       - uses: actions/upload-artifact@v4
@@ -49,19 +44,12 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-      # Container job runs as root, so files it writes into the runner's
-      # bind-mounted workspace are root-owned. Relax perms so a later
-      # host-native job on the same self-hosted runner can clean them up at
-      # checkout (avoids EACCES on actions/checkout).
-      - name: Leave workspace cleanable by host-native jobs
-        if: always()
-        run: chmod -R a+rwX "$GITHUB_WORKSPACE" || true
   deploy:
     if: github.ref == 'refs/heads/main'
     needs:
       - test-and-build
       - e2e-test
-    runs-on: [self-hosted, homelab]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
