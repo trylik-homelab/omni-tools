@@ -30,7 +30,12 @@ jobs:
         run: npm run build
   e2e-test:
     name: 'Playwright Tests'
-    runs-on: ubuntu-latest
+    # Pinned (OMNI-7, 2026-11-22): ubuntu-latest rolled to 26.04 and
+    # `npx playwright install --with-deps` (Playwright 1.55.1) dies with
+    # "Playwright does not support chromium on ubuntu26.04-x64" before any
+    # test runs (run 44959467937). Unpin once Playwright is upgraded to a
+    # release that supports 26.04. Still GitHub-hosted on purpose (see AGENTS.md).
+    runs-on: ubuntu-24.04
     # Non-blocking: this is the upstream fork's tool suite, and several image
     # tools (e.g. convert-jpg-to-png) fail in headless CI browsers for reasons
     # unrelated to our changes. Keep it running + reporting, but don't let it
