@@ -133,5 +133,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json}": "prettier --write"
+  },
+  "overrides": {
+    "tinypool": "2.1.2"
   }
 }
