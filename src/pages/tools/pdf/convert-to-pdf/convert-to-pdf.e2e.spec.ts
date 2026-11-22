@@ -36,7 +36,15 @@ test.describe('Convert images to PDF tool', () => {
         }
       ]);
 
-      const downloadPromise = page.waitForEvent('download');
+      // Headless Chromium (Playwright >= 1.6x) also "downloads" the result
+      // preview <iframe> under its blob-URL UUID; skip that one so we catch the
+      // Download button's file (OMNI-11).
+      const downloadPromise = page.waitForEvent('download', {
+        predicate: (d) =>
+          !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.pdf$/.test(
+            d.suggestedFilename()
+          )
+      });
       await page.getByText('Download', { exact: true }).click();
       const download = await downloadPromise;
 

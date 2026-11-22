@@ -29,6 +29,18 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTranslation } from 'react-i18next';
 import { validNamespaces } from '../../../../i18n';
 
+// `solveFor` is attached at runtime by the 'nerdamer-prime/Solve' add-on
+// imported above, so nerdamer-prime >= 1.3 types it as optional.
+function solveFor(
+  expr: nerdamer.NerdamerExpression,
+  varName: string
+): nerdamer.NerdamerExpression[] {
+  if (expr.solveFor === undefined) {
+    throw new Error('nerdamer Solve add-on is not loaded');
+  }
+  return expr.solveFor(varName);
+}
+
 function numericSolveEquationFor(
   equation: string,
   varName: string,
@@ -39,16 +51,18 @@ function numericSolveEquationFor(
     expr = expr.sub(key, variables[key].toString());
   }
 
-  let result: nerdamer.Expression | nerdamer.Expression[] =
-    expr.solveFor(varName);
+  let result: nerdamer.NerdamerExpression | nerdamer.NerdamerExpression[] =
+    solveFor(expr, varName);
 
   // Sometimes the result is an array, check for it while keeping linter happy
-  if ((result as unknown as nerdamer.Expression).toDecimal === undefined) {
-    result = (result as unknown as nerdamer.Expression[])[0];
+  if (
+    (result as unknown as nerdamer.NerdamerExpression).toDecimal === undefined
+  ) {
+    result = (result as unknown as nerdamer.NerdamerExpression[])[0];
   }
 
   return parseFloat(
-    (result as unknown as nerdamer.Expression).evaluate().toDecimal()
+    (result as unknown as nerdamer.NerdamerExpression).evaluate().toDecimal()
   );
 }
 
@@ -498,7 +512,7 @@ export default async function makeTool(
             showSnackBar('Please select a solve for variable', 'error');
             return;
           }
-          let expr: nerdamer.Expression | null = null;
+          let expr: nerdamer.NerdamerExpression | null = null;
 
           for (const variable of calcData.variables) {
             if (variable.name === values.outputVariable) {
@@ -523,14 +537,21 @@ export default async function makeTool(
             expr = expr.sub(key, values.vars[key].value.toString());
           });
 
-          let result: nerdamer.Expression | nerdamer.Expression[] =
-            expr.solveFor(values.outputVariable);
+          let result:
+            | nerdamer.NerdamerExpression
+            | nerdamer.NerdamerExpression[] = solveFor(
+            expr,
+            values.outputVariable
+          );
 
           // Sometimes the result is an array
           if (
-            (result as unknown as nerdamer.Expression).toDecimal === undefined
+            (result as unknown as nerdamer.NerdamerExpression).toDecimal ===
+            undefined
           ) {
-            if ((result as unknown as nerdamer.Expression[])?.length < 1) {
+            if (
+              (result as unknown as nerdamer.NerdamerExpression[])?.length < 1
+            ) {
               values.vars[values.outputVariable].value = NaN;
               if (calcData.extraOutputs !== undefined) {
                 // Update extraOutputs using setState
@@ -545,13 +566,13 @@ export default async function makeTool(
               }
               throw new Error('No solution found for this input');
             }
-            result = (result as unknown as nerdamer.Expression[])[0];
+            result = (result as unknown as nerdamer.NerdamerExpression[])[0];
           }
 
           if (result) {
             if (values.vars[values.outputVariable] != undefined) {
               values.vars[values.outputVariable].value = parseFloat(
-                (result as unknown as nerdamer.Expression)
+                (result as unknown as nerdamer.NerdamerExpression)
                   .evaluate()
                   .toDecimal()
               );
@@ -571,7 +592,7 @@ export default async function makeTool(
               });
 
               // todo could this have multiple solutions too?
-              const result: nerdamer.Expression = expr.evaluate();
+              const result: nerdamer.NerdamerExpression = expr.evaluate();
 
               if (result) {
                 // Update extraOutputs state properly
