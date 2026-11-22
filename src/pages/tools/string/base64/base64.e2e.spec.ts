@@ -17,8 +17,13 @@ test.describe('Base64', { tag: '@scenario:cmwsb9t4r00a13hmscu5t2z3g' }, () => {
   });
 
   test('decodes Base64 back to text', async ({ page }) => {
-    // The site defaults to Polish; accept either language's label.
-    await page.getByText(/^(Dekoduj Base64|Base64 Decode)$/).click();
+    // The site defaults to Polish; accept either language's label. Each example
+    // card repeats the options, so take the first match: the real options panel
+    // renders before the examples (ToolContent).
+    await page
+      .getByText(/^(Dekoduj Base64|Base64 Decode)$/)
+      .first()
+      .click();
     await page.getByTestId('text-input').fill('SGVsbG8sIFdvcmxkIQ==');
 
     await expect(page.getByTestId('text-result')).toHaveValue('Hello, World!');
