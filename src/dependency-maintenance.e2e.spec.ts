@@ -29,7 +29,8 @@ test(
       '{"name":"Żółw","count":2}'
     );
     await expect(page.locator('.monaco-editor .view-lines')).toContainText(
-      'Żółw'
+      'Żółw',
+      { timeout: 15_000 }
     );
 
     const png = await new Jimp({

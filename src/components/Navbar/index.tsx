@@ -20,7 +20,9 @@ import {
 } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import { Icon } from '@iconify/react';
+import ContrastRounded from '@mui/icons-material/ContrastRounded';
+import DarkModeRounded from '@mui/icons-material/DarkModeRounded';
+import LightModeRounded from '@mui/icons-material/LightModeRounded';
 import { Mode } from 'components/App';
 import { useTranslation } from 'react-i18next';
 
@@ -97,20 +99,19 @@ const Navbar: React.FC<NavbarProps> = ({
     </FormControl>
   );
 
+  const ThemeIcon =
+    mode === 'dark'
+      ? DarkModeRounded
+      : mode === 'light'
+        ? LightModeRounded
+        : ContrastRounded;
+
   const buttons: ReactNode[] = [
     languageSelector,
-    <Icon
+    <ThemeIcon
       key={mode}
       onClick={onChangeMode}
-      style={{ cursor: 'pointer' }}
-      fontSize={30}
-      icon={
-        mode === 'dark'
-          ? 'ic:round-dark-mode'
-          : mode === 'light'
-            ? 'ic:round-light-mode'
-            : 'ic:round-contrast'
-      }
+      sx={{ cursor: 'pointer', fontSize: 30 }}
     />
   ];
   const drawerList = (
