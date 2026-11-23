@@ -19,14 +19,38 @@ interface AllToolsProps {
 export default function AllTools({ title, toolCards }: AllToolsProps) {
   const { t } = useTranslation();
   return (
-    <Box mt={4} mb={10}>
-      <Typography mb={2} fontSize={30} color={'primary'}>
+    <Box
+      sx={{
+        mt: 4,
+        mb: 10
+      }}
+    >
+      <Typography
+        color={'primary'}
+        sx={{
+          mb: 2,
+          fontSize: 30
+        }}
+      >
         {title}
       </Typography>
-      <Stack direction={'row'} alignItems={'center'} spacing={2}>
+      <Stack
+        direction={'row'}
+        spacing={2}
+        sx={{
+          alignItems: 'center'
+        }}
+      >
         <Grid container spacing={2}>
           {toolCards.map((card, index) => (
-            <Grid item xs={12} md={6} lg={4} key={index}>
+            <Grid
+              key={index}
+              size={{
+                xs: 12,
+                md: 6,
+                lg: 4
+              }}
+            >
               <ToolCard
                 //@ts-ignore
                 title={t(card.title)}

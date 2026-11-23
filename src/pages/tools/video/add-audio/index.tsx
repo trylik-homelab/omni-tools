@@ -120,7 +120,13 @@ export default function AddAudio({ title }: ToolComponentProps) {
               }}
             />
           ))}
-          <Typography mt={3} mb={1} fontSize={22}>
+          <Typography
+            sx={{
+              mt: 3,
+              mb: 1,
+              fontSize: 22
+            }}
+          >
             {t('addAudio.loopOption')}
           </Typography>
           <SimpleRadio
@@ -160,11 +166,22 @@ export default function AddAudio({ title }: ToolComponentProps) {
             valueLabelFormat={(value) => `${value}%`}
             sx={{ mt: 1 }}
           />
-          <Typography mt={0.5} fontSize={14}>
+          <Typography
+            sx={{
+              mt: 0.5,
+              fontSize: 14
+            }}
+          >
             {values.volume}%
           </Typography>
 
-          <Typography mt={2} mb={1} fontSize={22}>
+          <Typography
+            sx={{
+              mt: 2,
+              mb: 1,
+              fontSize: 22
+            }}
+          >
             {t('addAudio.timing')}
           </Typography>
           <SelectWithDesc
@@ -190,7 +207,11 @@ export default function AddAudio({ title }: ToolComponentProps) {
           />
           {(values.timingMode === 'start' ||
             values.timingMode === 'startEnd') && (
-            <Box mt={1}>
+            <Box
+              sx={{
+                mt: 1
+              }}
+            >
               <TextFieldWithDesc
                 value={values.startTime}
                 onOwnChange={(val) => {
@@ -204,7 +225,11 @@ export default function AddAudio({ title }: ToolComponentProps) {
           )}
           {(values.timingMode === 'end' ||
             values.timingMode === 'startEnd') && (
-            <Box mt={1}>
+            <Box
+              sx={{
+                mt: 1
+              }}
+            >
               <TextFieldWithDesc
                 value={values.endTime}
                 onOwnChange={(val) => {

@@ -21,15 +21,24 @@ const SimpleRadio: React.FC<SimpleRadioProps> = ({
     <Box>
       <Stack
         direction={'row'}
-        sx={{ mt: 2, mb: 1, cursor: 'pointer' }}
-        alignItems={'center'}
         onClick={onClick}
+        sx={{
+          alignItems: 'center',
+          mt: 2,
+          mb: 1,
+          cursor: 'pointer'
+        }}
       >
         <Radio checked={checked} onClick={onClick} />
         <Typography>{title}</Typography>
       </Stack>
       {description && (
-        <Typography ml={2} fontSize={globalDescriptionFontSize}>
+        <Typography
+          sx={{
+            ml: 2,
+            fontSize: globalDescriptionFontSize
+          }}
+        >
           {description}
         </Typography>
       )}

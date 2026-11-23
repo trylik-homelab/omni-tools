@@ -124,8 +124,19 @@ export default function NumericInputWithUnit(props: {
   };
 
   return (
-    <Grid container spacing={2} alignItems="center">
-      <Grid item xs={12} md={4}>
+    <Grid
+      container
+      spacing={2}
+      sx={{
+        alignItems: 'center'
+      }}
+    >
+      <Grid
+        size={{
+          xs: 12,
+          md: 4
+        }}
+      >
         <TextFieldWithDesc
           disabled={disabled}
           type="number"
@@ -138,7 +149,12 @@ export default function NumericInputWithUnit(props: {
         />
       </Grid>
 
-      <Grid item xs={12} md={3}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 3
+        }}
+      >
         <Select
           fullWidth
           disabled={disableChangingUnit}
@@ -156,7 +172,12 @@ export default function NumericInputWithUnit(props: {
         </Select>
       </Grid>
 
-      <Grid item xs={12} md={5}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 5
+        }}
+      >
         <Select
           fullWidth
           disabled={disableChangingUnit}

@@ -37,19 +37,35 @@ export default function ToolOptions<T extends FormikValues>({
   return (
     <Box
       sx={{
+        mt: 2,
         mb: 2,
         borderRadius: 2,
         padding: 2,
         backgroundColor: 'background.lightSecondary',
         boxShadow: '2'
       }}
-      mt={2}
     >
-      <Stack direction={'row'} spacing={1} alignItems={'center'}>
+      <Stack
+        direction={'row'}
+        spacing={1}
+        sx={{
+          alignItems: 'center'
+        }}
+      >
         <SettingsIcon />
-        <Typography fontSize={22}>{t('toolOptions.title')}</Typography>
+        <Typography
+          sx={{
+            fontSize: 22
+          }}
+        >
+          {t('toolOptions.title')}
+        </Typography>
       </Stack>
-      <Box mt={2}>
+      <Box
+        sx={{
+          mt: 2
+        }}
+      >
         <Stack direction={'row'} spacing={2}>
           <ToolOptionGroups
             groups={getGroups({ ...formikContext, updateField }) ?? null}

@@ -168,7 +168,9 @@ export default function CsvToTsv({
               value={values.fromPosition}
               onOwnChange={(val) => updateField('fromPosition', val)}
               type="number"
-              inputProps={{ min: 1, max: headers.length }}
+              slotProps={{
+                htmlInput: { min: 1, max: headers.length }
+              }}
             />
           )}
 
@@ -203,7 +205,9 @@ export default function CsvToTsv({
               value={values.toPosition}
               onOwnChange={(val) => updateField('toPosition', val)}
               type="number"
-              inputProps={{ min: 1, max: headers.length }}
+              slotProps={{
+                htmlInput: { min: 1, max: headers.length }
+              }}
             />
           )}
           <SimpleRadio

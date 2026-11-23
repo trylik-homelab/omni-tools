@@ -52,13 +52,30 @@ export default function ExampleCard<T>({
       }}
     >
       <CardContent>
-        <Box display="flex" justifyContent="space-between" borderRadius="5px">
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            borderRadius: '5px'
+          }}
+        >
           <Typography variant="h5" component="h2">
             {title}
           </Typography>
         </Box>
-        <Stack direction={'column'} alignItems={'center'} spacing={2}>
-          <Typography variant="body2" color="text.secondary">
+        <Stack
+          direction={'column'}
+          spacing={2}
+          sx={{
+            alignItems: 'center'
+          }}
+        >
+          <Typography
+            variant="body2"
+            sx={{
+              color: 'text.secondary'
+            }}
+          >
             {description}
           </Typography>
 

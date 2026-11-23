@@ -42,15 +42,21 @@ export default function ToolCard({
     >
       <CardContent>
         <Box
-          display="flex"
-          justifyContent="space-between"
           sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
             paddingBottom: 1,
             borderBottomWidth: 1,
             borderColor: '#ffffff70'
           }}
         >
-          <Stack direction={'row'} spacing={2} alignItems={'center'}>
+          <Stack
+            direction={'row'}
+            spacing={2}
+            sx={{
+              alignItems: 'center'
+            }}
+          >
             <Icon icon={icon} fontSize={25} />
             <Typography variant="h5" component="h2">
               {title}
@@ -60,7 +66,13 @@ export default function ToolCard({
             <ChevronRightIcon />
           </Link>
         </Box>
-        <Typography variant="body2" mt={2} color="#fff">
+        <Typography
+          variant="body2"
+          sx={{
+            mt: 2,
+            color: '#fff'
+          }}
+        >
           {description}
         </Typography>
       </CardContent>

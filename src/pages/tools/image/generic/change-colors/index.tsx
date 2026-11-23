@@ -87,7 +87,9 @@ export default function ChangeColorsInImage({ title }: ToolComponentProps) {
               value={values.fromColor}
               onColorChange={(val) => updateField('fromColor', val)}
               description={t('changeColors.fromColor.selectorDescription')}
-              inputProps={{ 'data-testid': 'from-color-input' }}
+              slotProps={{
+                htmlInput: { 'data-testid': 'from-color-input' }
+              }}
             />
           )}
           <TextFieldWithDesc
@@ -119,7 +121,9 @@ export default function ChangeColorsInImage({ title }: ToolComponentProps) {
               value={values.toColor}
               onColorChange={(val) => updateField('toColor', val)}
               description={t('changeColors.toColor.selectorDescription')}
-              inputProps={{ 'data-testid': 'to-color-input' }}
+              slotProps={{
+                htmlInput: { 'data-testid': 'to-color-input' }
+              }}
             />
           )}
         </Box>

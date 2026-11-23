@@ -17,7 +17,13 @@ export default function InputFooter({
   const { t } = useTranslation();
 
   return (
-    <Stack mt={1} direction={'row'} spacing={2}>
+    <Stack
+      direction={'row'}
+      spacing={2}
+      sx={{
+        mt: 1
+      }}
+    >
       <Button onClick={handleImport} startIcon={<PublishIcon />}>
         {t('inputFooter.importFromFile')}
       </Button>

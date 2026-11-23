@@ -103,8 +103,18 @@ export default function ConvertToJpg({ title }: ToolComponentProps) {
           title: t('convertToJPG.options.title'),
           component: (
             <Box>
-              <Box mb={3}>
-                <Typography variant="body2" color="text.secondary" gutterBottom>
+              <Box
+                sx={{
+                  mb: 3
+                }}
+              >
+                <Typography
+                  variant="body2"
+                  gutterBottom
+                  sx={{
+                    color: 'text.secondary'
+                  }}
+                >
                   {t('convertToJPG.options.quality')} {values.quality}%
                 </Typography>
                 <Slider
@@ -122,7 +132,12 @@ export default function ConvertToJpg({ title }: ToolComponentProps) {
                   valueLabelFormat={(value) => `${value}%`}
                   sx={{ mt: 1 }}
                 />
-                <Typography variant="caption" color="text.secondary">
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: 'text.secondary'
+                  }}
+                >
                   {t('convertToJPG.options.qualityDescription')}
                 </Typography>
               </Box>
@@ -131,7 +146,9 @@ export default function ConvertToJpg({ title }: ToolComponentProps) {
                 value={values.backgroundColor}
                 onColorChange={(val) => updateField('backgroundColor', val)}
                 description={t('convertToJPG.options.colorDescription')}
-                inputProps={{ 'data-testid': 'background-color-input' }}
+                slotProps={{
+                  htmlInput: { 'data-testid': 'background-color-input' }
+                }}
               />
             </Box>
           )

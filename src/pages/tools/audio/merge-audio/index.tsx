@@ -55,7 +55,11 @@ export default function MergeAudio({
     {
       title: t('mergeAudio.outputFormat'),
       component: (
-        <Box mt={2}>
+        <Box
+          sx={{
+            mt: 2
+          }}
+        >
           <RadioGroup
             row
             value={values.outputFormat}

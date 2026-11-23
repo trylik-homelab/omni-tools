@@ -91,10 +91,12 @@ export default function RotateImage({ title }: ToolComponentProps) {
                   description={
                     'Rotate by a custom angle in degrees(from -360 to 360).'
                   }
-                  inputProps={{
-                    type: 'number',
-                    min: -360,
-                    max: 360
+                  slotProps={{
+                    htmlInput: {
+                      type: 'number',
+                      min: -360,
+                      max: 360
+                    }
                   }}
                 />
               </Box>

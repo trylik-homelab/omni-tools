@@ -43,11 +43,12 @@ const SingleCategory = function ({
 
   return (
     <Grid
-      item
-      xs={12}
-      md={6}
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
+      size={{
+        xs: 12,
+        md: 6
+      }}
     >
       <Card
         sx={{
@@ -58,11 +59,19 @@ const SingleCategory = function ({
         <CardContent sx={{ height: '100%' }}>
           <Stack
             direction={'column'}
-            height={'100%'}
-            justifyContent={'space-between'}
+            sx={{
+              height: '100%',
+              justifyContent: 'space-between'
+            }}
           >
             <Box>
-              <Stack direction={'row'} spacing={2} alignItems={'center'}>
+              <Stack
+                direction={'row'}
+                spacing={2}
+                sx={{
+                  alignItems: 'center'
+                }}
+              >
                 <Icon
                   icon={category.icon}
                   fontSize={'60px'}
@@ -84,8 +93,19 @@ const SingleCategory = function ({
               </Stack>
               <Typography sx={{ mt: 2 }}>{categoryDescription}</Typography>
             </Box>
-            <Grid container spacing={2} mt={2}>
-              <Grid item xs={12} md={6}>
+            <Grid
+              container
+              spacing={2}
+              sx={{
+                mt: 2
+              }}
+            >
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 6
+                }}
+              >
                 <Button
                   fullWidth
                   sx={{ height: '100%' }}
@@ -95,7 +115,12 @@ const SingleCategory = function ({
                   {seeAllText}
                 </Button>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 6
+                }}
+              >
                 <Button
                   sx={{ backgroundColor: 'background.default', height: '100%' }}
                   fullWidth
@@ -119,7 +144,13 @@ export default function Categories() {
   const categories = getToolsByCategory(selectedUserTypes, t);
 
   return (
-    <Grid width={'80%'} container spacing={2}>
+    <Grid
+      container
+      spacing={2}
+      sx={{
+        width: '80%'
+      }}
+    >
       {categories.map((category, index) => (
         <SingleCategory key={category.type} category={category} index={index} />
       ))}

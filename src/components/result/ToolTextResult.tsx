@@ -79,7 +79,9 @@ export default function ToolTextResult({
             }
           }}
           rows={10}
-          inputProps={{ 'data-testid': 'text-result' }}
+          slotProps={{
+            htmlInput: { 'data-testid': 'text-result' }
+          }}
         />
       )}
       <ResultFooter handleCopy={handleCopy} handleDownload={handleDownload} />

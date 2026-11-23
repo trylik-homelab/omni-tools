@@ -75,9 +75,11 @@ export default function RandomNumberGenerator({
             description={t(
               'randomNumberGenerator.options.range.minDescription'
             )}
-            inputProps={{
-              type: 'number',
-              'data-testid': 'min-value-input'
+            slotProps={{
+              htmlInput: {
+                type: 'number',
+                'data-testid': 'min-value-input'
+              }
             }}
           />
           <TextFieldWithDesc
@@ -88,9 +90,11 @@ export default function RandomNumberGenerator({
             description={t(
               'randomNumberGenerator.options.range.maxDescription'
             )}
-            inputProps={{
-              type: 'number',
-              'data-testid': 'max-value-input'
+            slotProps={{
+              htmlInput: {
+                type: 'number',
+                'data-testid': 'max-value-input'
+              }
             }}
           />
         </Box>
@@ -106,11 +110,13 @@ export default function RandomNumberGenerator({
             description={t(
               'randomNumberGenerator.options.generation.countDescription'
             )}
-            inputProps={{
-              type: 'number',
-              min: 1,
-              max: 10000,
-              'data-testid': 'count-input'
+            slotProps={{
+              htmlInput: {
+                type: 'number',
+                min: 1,
+                max: 10000,
+                'data-testid': 'count-input'
+              }
             }}
           />
 
@@ -159,8 +165,10 @@ export default function RandomNumberGenerator({
             description={t(
               'randomNumberGenerator.options.output.separatorDescription'
             )}
-            inputProps={{
-              'data-testid': 'separator-input'
+            slotProps={{
+              htmlInput: {
+                'data-testid': 'separator-input'
+              }
             }}
           />
         </Box>

@@ -57,8 +57,8 @@ export default function ToolCodeInput({
     <Box>
       <InputHeader title={title || t('toolTextInput.input')} />
       <Box
-        height={`${globalInputHeight + codeInputHeightOffset}px`} // The +codeInputHeightOffset compensates for internal padding/border differences between Monaco Editor and MUI TextField
         sx={{
+          height: `${globalInputHeight + codeInputHeightOffset}px`,
           display: 'flex',
           flexDirection: 'column'
         }}

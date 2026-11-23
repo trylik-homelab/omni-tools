@@ -124,7 +124,9 @@ export default function CropVideo({ title }: ToolComponentProps) {
               value={values.x}
               onChange={(e) => updateField('x', parseInt(e.target.value) || 0)}
               size="small"
-              inputProps={{ min: 0 }}
+              slotProps={{
+                htmlInput: { min: 0 }
+              }}
             />
             <TextField
               label={t('cropVideo.yCoordinate')}
@@ -132,7 +134,9 @@ export default function CropVideo({ title }: ToolComponentProps) {
               value={values.y}
               onChange={(e) => updateField('y', parseInt(e.target.value) || 0)}
               size="small"
-              inputProps={{ min: 0 }}
+              slotProps={{
+                htmlInput: { min: 0 }
+              }}
             />
           </Box>
           <Box sx={{ display: 'flex', gap: 2 }}>
@@ -144,7 +148,9 @@ export default function CropVideo({ title }: ToolComponentProps) {
                 updateField('width', parseInt(e.target.value) || 0)
               }
               size="small"
-              inputProps={{ min: 1 }}
+              slotProps={{
+                htmlInput: { min: 1 }
+              }}
             />
             <TextField
               label={t('cropVideo.height')}
@@ -154,7 +160,9 @@ export default function CropVideo({ title }: ToolComponentProps) {
                 updateField('height', parseInt(e.target.value) || 0)
               }
               size="small"
-              inputProps={{ min: 1 }}
+              slotProps={{
+                htmlInput: { min: 1 }
+              }}
             />
           </Box>
         </Box>

@@ -105,11 +105,13 @@ export default function RandomPortGenerator({
                 description={t(
                   'randomPortGenerator.options.range.minPortDescription'
                 )}
-                inputProps={{
-                  type: 'number',
-                  min: 1,
-                  max: 65535,
-                  'data-testid': 'min-port-input'
+                slotProps={{
+                  htmlInput: {
+                    type: 'number',
+                    min: 1,
+                    max: 65535,
+                    'data-testid': 'min-port-input'
+                  }
                 }}
               />
               <TextFieldWithDesc
@@ -120,11 +122,13 @@ export default function RandomPortGenerator({
                 description={t(
                   'randomPortGenerator.options.range.maxPortDescription'
                 )}
-                inputProps={{
-                  type: 'number',
-                  min: 1,
-                  max: 65535,
-                  'data-testid': 'max-port-input'
+                slotProps={{
+                  htmlInput: {
+                    type: 'number',
+                    min: 1,
+                    max: 65535,
+                    'data-testid': 'max-port-input'
+                  }
                 }}
               />
             </Box>
@@ -150,11 +154,13 @@ export default function RandomPortGenerator({
             description={t(
               'randomPortGenerator.options.generation.countDescription'
             )}
-            inputProps={{
-              type: 'number',
-              min: 1,
-              max: 1000,
-              'data-testid': 'count-input'
+            slotProps={{
+              htmlInput: {
+                type: 'number',
+                min: 1,
+                max: 1000,
+                'data-testid': 'count-input'
+              }
             }}
           />
 
@@ -192,8 +198,10 @@ export default function RandomPortGenerator({
             description={t(
               'randomPortGenerator.options.output.separatorDescription'
             )}
-            inputProps={{
-              'data-testid': 'separator-input'
+            slotProps={{
+              htmlInput: {
+                'data-testid': 'separator-input'
+              }
             }}
           />
         </Box>

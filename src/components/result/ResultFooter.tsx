@@ -20,7 +20,13 @@ export default function ResultFooter({
 }) {
   const { t } = useTranslation();
   return (
-    <Stack mt={1} direction={'row'} spacing={2}>
+    <Stack
+      direction={'row'}
+      spacing={2}
+      sx={{
+        mt: 1
+      }}
+    >
       <Button
         disabled={disabled}
         onClick={handleDownload}

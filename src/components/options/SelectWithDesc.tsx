@@ -32,7 +32,11 @@ const SelectWithDesc = <T extends string | boolean>({
   };
 
   return (
-    <Box mb={3}>
+    <Box
+      sx={{
+        mb: 3
+      }}
+    >
       <Select displayEmpty value={selected} onChange={handleChange}>
         {options.map((option) => (
           <MenuItem key={option.label} value={option.value.toString()}>
@@ -40,7 +44,12 @@ const SelectWithDesc = <T extends string | boolean>({
           </MenuItem>
         ))}
       </Select>
-      <Typography fontSize={12} mt={1}>
+      <Typography
+        sx={{
+          fontSize: 12,
+          mt: 1
+        }}
+      >
         {description}
       </Typography>
     </Box>

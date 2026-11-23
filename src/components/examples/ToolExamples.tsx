@@ -38,20 +38,57 @@ export default function ToolExamples<T>({
   }
 
   return (
-    <Box id={'examples'} mt={4}>
-      <Box mt={4} display="flex" gap={1} alignItems="center">
-        <Typography mb={2} fontSize={30} color={'primary'}>
+    <Box
+      id={'examples'}
+      sx={{
+        mt: 4
+      }}
+    >
+      <Box
+        sx={{
+          mt: 4,
+          display: 'flex',
+          gap: 1,
+          alignItems: 'center'
+        }}
+      >
+        <Typography
+          color={'primary'}
+          sx={{
+            mb: 2,
+            fontSize: 30
+          }}
+        >
           {t('toolExamples.title', { title })}
         </Typography>
-        <Typography mb={2} fontSize={30} color={'secondary'}>
+        <Typography
+          color={'secondary'}
+          sx={{
+            mb: 2,
+            fontSize: 30
+          }}
+        >
           {subtitle ?? t('toolExamples.subtitle')}
         </Typography>
       </Box>
 
-      <Stack direction={'row'} alignItems={'center'} spacing={2}>
+      <Stack
+        direction={'row'}
+        spacing={2}
+        sx={{
+          alignItems: 'center'
+        }}
+      >
         <Grid container spacing={2}>
           {exampleCards.map((card, index) => (
-            <Grid item xs={12} md={6} lg={4} key={index}>
+            <Grid
+              key={index}
+              size={{
+                xs: 12,
+                md: 6,
+                lg: 4
+              }}
+            >
               <ExampleCard
                 title={card.title}
                 description={card.description}

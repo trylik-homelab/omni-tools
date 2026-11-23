@@ -174,7 +174,13 @@ const Navbar: React.FC<NavbarProps> = ({
             </Drawer>
           </>
         ) : (
-          <Stack direction={'row'} spacing={3} alignItems={'center'}>
+          <Stack
+            direction={'row'}
+            spacing={3}
+            sx={{
+              alignItems: 'center'
+            }}
+          >
             {navItems.map((item) => (
               <Button
                 key={item.label}

@@ -206,10 +206,12 @@ export default function QRCodeGenerator({ title }: ToolComponentProps) {
               value={values.size}
               onOwnChange={(val) => updateField('size', val)}
               description={t('qrCode.options.size')}
-              inputProps={{
-                type: 'number',
-                min: 100,
-                max: 1000
+              slotProps={{
+                htmlInput: {
+                  type: 'number',
+                  min: 100,
+                  max: 1000
+                }
               }}
             />
             <ColorSelector
@@ -235,8 +237,10 @@ export default function QRCodeGenerator({ title }: ToolComponentProps) {
                 value={values.url}
                 onOwnChange={(val) => updateField('url', val)}
                 description={t('qrCode.options.url')}
-                inputProps={{
-                  placeholder: 'https://example.com'
+                slotProps={{
+                  htmlInput: {
+                    placeholder: 'https://example.com'
+                  }
                 }}
               />
             )}
@@ -248,8 +252,10 @@ export default function QRCodeGenerator({ title }: ToolComponentProps) {
                 description={t('qrCode.options.text')}
                 multiline
                 rows={4}
-                inputProps={{
-                  placeholder: 'Lorem Ipsum'
+                slotProps={{
+                  htmlInput: {
+                    placeholder: 'Lorem Ipsum'
+                  }
                 }}
               />
             )}
@@ -260,17 +266,21 @@ export default function QRCodeGenerator({ title }: ToolComponentProps) {
                   value={values.emailAddress}
                   onOwnChange={(val) => updateField('emailAddress', val)}
                   description={t('qrCode.options.email')}
-                  inputProps={{
-                    placeholder: 'example@example.com',
-                    type: 'email'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: 'example@example.com',
+                      type: 'email'
+                    }
                   }}
                 />
                 <TextFieldWithDesc
                   value={values.emailSubject}
                   onOwnChange={(val) => updateField('emailSubject', val)}
                   description={t('qrCode.options.emailSubject')}
-                  inputProps={{
-                    placeholder: 'Subject line'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: 'Subject line'
+                    }
                   }}
                 />
                 <TextFieldWithDesc
@@ -279,8 +289,10 @@ export default function QRCodeGenerator({ title }: ToolComponentProps) {
                   description={t('qrCode.options.emailBody')}
                   multiline
                   rows={4}
-                  inputProps={{
-                    placeholder: 'Body text'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: 'Body text'
+                    }
                   }}
                 />
               </>
@@ -291,9 +303,11 @@ export default function QRCodeGenerator({ title }: ToolComponentProps) {
                 value={values.phoneNumber}
                 onOwnChange={(val) => updateField('phoneNumber', val)}
                 description={t('qrCode.options.phone')}
-                inputProps={{
-                  placeholder: '+1234567890',
-                  type: 'tel'
+                slotProps={{
+                  htmlInput: {
+                    placeholder: '+1234567890',
+                    type: 'tel'
+                  }
                 }}
               />
             )}
@@ -304,9 +318,11 @@ export default function QRCodeGenerator({ title }: ToolComponentProps) {
                   value={values.smsNumber}
                   onOwnChange={(val) => updateField('smsNumber', val)}
                   description={t('qrCode.options.phone')}
-                  inputProps={{
-                    placeholder: '+1234567890',
-                    type: 'tel'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: '+1234567890',
+                      type: 'tel'
+                    }
                   }}
                 />
                 <TextFieldWithDesc
@@ -315,8 +331,10 @@ export default function QRCodeGenerator({ title }: ToolComponentProps) {
                   description={t('qrCode.options.message')}
                   multiline
                   rows={4}
-                  inputProps={{
-                    placeholder: 'Lorem Ipsum'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: 'Lorem Ipsum'
+                    }
                   }}
                 />
               </>
@@ -328,17 +346,21 @@ export default function QRCodeGenerator({ title }: ToolComponentProps) {
                   value={values.wifiSsid}
                   onOwnChange={(val) => updateField('wifiSsid', val)}
                   description={t('qrCode.options.ssid')}
-                  inputProps={{
-                    placeholder: 'WIFI name'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: 'WIFI name'
+                    }
                   }}
                 />
                 <TextFieldWithDesc
                   value={values.wifiPassword}
                   onOwnChange={(val) => updateField('wifiPassword', val)}
                   description={t('qrCode.options.password')}
-                  inputProps={{
-                    placeholder: '******',
-                    type: 'password'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: '******',
+                      type: 'password'
+                    }
                   }}
                 />
                 <SelectWithDesc
@@ -362,58 +384,72 @@ export default function QRCodeGenerator({ title }: ToolComponentProps) {
                   value={values.vCardName}
                   onOwnChange={(val) => updateField('vCardName', val)}
                   description={t('qrCode.options.fullName')}
-                  inputProps={{
-                    placeholder: 'John Doe'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: 'John Doe'
+                    }
                   }}
                 />
                 <TextFieldWithDesc
                   value={values.vCardEmail}
                   onOwnChange={(val) => updateField('vCardEmail', val)}
                   description={t('qrCode.options.email')}
-                  inputProps={{
-                    placeholder: 'john@example.com',
-                    type: 'email'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: 'john@example.com',
+                      type: 'email'
+                    }
                   }}
                 />
                 <TextFieldWithDesc
                   value={values.vCardPhone}
                   onOwnChange={(val) => updateField('vCardPhone', val)}
                   description={t('qrCode.options.phone')}
-                  inputProps={{
-                    placeholder: '+1234567890',
-                    type: 'tel'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: '+1234567890',
+                      type: 'tel'
+                    }
                   }}
                 />
                 <TextFieldWithDesc
                   value={values.vCardAddress}
                   onOwnChange={(val) => updateField('vCardAddress', val)}
                   description={t('qrCode.options.address')}
-                  inputProps={{
-                    placeholder: '123 Main St, City, Country'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: '123 Main St, City, Country'
+                    }
                   }}
                 />
                 <TextFieldWithDesc
                   value={values.vCardCompany}
                   onOwnChange={(val) => updateField('vCardCompany', val)}
                   description={t('qrCode.options.company')}
-                  inputProps={{
-                    placeholder: 'Company name'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: 'Company name'
+                    }
                   }}
                 />
                 <TextFieldWithDesc
                   value={values.vCardTitle}
                   onOwnChange={(val) => updateField('vCardTitle', val)}
                   description={t('qrCode.options.job')}
-                  inputProps={{
-                    placeholder: 'Software Developer'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: 'Software Developer'
+                    }
                   }}
                 />
                 <TextFieldWithDesc
                   value={values.vCardWebsite}
                   onOwnChange={(val) => updateField('vCardWebsite', val)}
                   description={t('qrCode.options.website')}
-                  inputProps={{
-                    placeholder: 'https://example.com'
+                  slotProps={{
+                    htmlInput: {
+                      placeholder: 'https://example.com'
+                    }
                   }}
                 />
               </>
