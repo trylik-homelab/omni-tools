@@ -44,7 +44,7 @@ export interface DefinedTool {
   shortDescription: FullI18nKey;
   icon: IconifyIcon | string;
   keywords: string[];
-  component: () => JSX.Element;
+  component: () => React.JSX.Element;
   userTypes?: UserType[];
 }
 

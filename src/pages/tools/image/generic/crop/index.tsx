@@ -134,40 +134,48 @@ export default function CropImage({ title }: ToolComponentProps) {
             value={values.xPosition}
             onOwnChange={(val) => updateField('xPosition', val)}
             description={'X position (in pixels)'}
-            inputProps={{
-              'data-testid': 'x-position-input',
-              type: 'number',
-              min: 0
+            slotProps={{
+              htmlInput: {
+                'data-testid': 'x-position-input',
+                type: 'number',
+                min: 0
+              }
             }}
           />
           <TextFieldWithDesc
             value={values.yPosition}
             onOwnChange={(val) => updateField('yPosition', val)}
             description={'Y position (in pixels)'}
-            inputProps={{
-              'data-testid': 'y-position-input',
-              type: 'number',
-              min: 0
+            slotProps={{
+              htmlInput: {
+                'data-testid': 'y-position-input',
+                type: 'number',
+                min: 0
+              }
             }}
           />
           <TextFieldWithDesc
             value={values.cropWidth}
             onOwnChange={(val) => updateField('cropWidth', val)}
             description={'Crop width (in pixels)'}
-            inputProps={{
-              'data-testid': 'crop-width-input',
-              type: 'number',
-              min: 1
+            slotProps={{
+              htmlInput: {
+                'data-testid': 'crop-width-input',
+                type: 'number',
+                min: 1
+              }
             }}
           />
           <TextFieldWithDesc
             value={values.cropHeight}
             onOwnChange={(val) => updateField('cropHeight', val)}
             description={'Crop height (in pixels)'}
-            inputProps={{
-              'data-testid': 'crop-height-input',
-              type: 'number',
-              min: 1
+            slotProps={{
+              htmlInput: {
+                'data-testid': 'crop-height-input',
+                type: 'number',
+                min: 1
+              }
             }}
           />
         </Box>

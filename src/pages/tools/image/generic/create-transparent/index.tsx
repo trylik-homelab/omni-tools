@@ -101,7 +101,9 @@ export default function CreateTransparent({ title }: ToolComponentProps) {
             value={values.fromColor}
             onColorChange={(val) => updateField('fromColor', val)}
             description={'Replace this color (from color)'}
-            inputProps={{ 'data-testid': 'color-input' }}
+            slotProps={{
+              htmlInput: { 'data-testid': 'color-input' }
+            }}
           />
           <TextFieldWithDesc
             value={values.similarity}

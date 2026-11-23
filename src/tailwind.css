@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+/* Keep Tailwind 3's default border color while upgrading the utility engine. */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}

@@ -125,23 +125,43 @@ export default function Hero() {
       : exampleTools;
 
   return (
-    <Box width={{ xs: '90%', md: '80%', lg: '60%' }}>
-      <Stack mb={1} direction={'row'} spacing={1} justifyContent={'center'}>
-        <Typography sx={{ textAlign: 'center' }} fontSize={{ xs: 25, md: 30 }}>
+    <Box
+      sx={{
+        width: { xs: '90%', md: '80%', lg: '60%' }
+      }}
+    >
+      <Stack
+        direction={'row'}
+        spacing={1}
+        sx={{
+          mb: 1,
+          justifyContent: 'center'
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: { xs: 25, md: 30 },
+            textAlign: 'center'
+          }}
+        >
           {t('translation:hero.title')}{' '}
           <Typography
-            fontSize={{ xs: 25, md: 30 }}
-            display={'inline'}
             color={'primary'}
+            sx={{
+              fontSize: { xs: 25, md: 30 },
+              display: 'inline'
+            }}
           >
             {t('translation:hero.brand')}
           </Typography>
         </Typography>
       </Stack>
       <Typography
-        sx={{ textAlign: 'center' }}
-        fontSize={{ xs: 15, md: 20 }}
-        mb={2}
+        sx={{
+          fontSize: { xs: 15, md: 20 },
+          mb: 2,
+          textAlign: 'center'
+        }}
       >
         {t('translation:hero.description')}
       </Typography>
@@ -169,34 +189,57 @@ export default function Hero() {
             {...params}
             fullWidth
             placeholder={t('translation:hero.search.placeholder')}
-            InputProps={{
-              ...params.InputProps,
-              endAdornment: <SearchIcon />,
-              sx: {
-                borderRadius: 4,
-                backgroundColor: 'background.paper'
+            onChange={(event) => handleInputChange(event, event.target.value)}
+            slotProps={{
+              ...params.slotProps,
+
+              input: {
+                ...params.slotProps.input,
+                endAdornment: <SearchIcon />,
+                sx: {
+                  borderRadius: 4,
+                  backgroundColor: 'background.paper'
+                }
               }
             }}
-            onChange={(event) => handleInputChange(event, event.target.value)}
           />
         )}
-        renderOption={(props, option) => (
+        renderOption={({ key, ...props }, option) => (
           <Box
             component="li"
+            key={key}
             {...props}
             onClick={() => navigate('/' + option.path)}
           >
             <Stack
               direction={'row'}
-              alignItems={'center'}
-              justifyContent={'space-between'}
-              width={'100%'}
+              sx={{
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                width: '100%'
+              }}
             >
-              <Stack direction={'row'} spacing={2} alignItems={'center'}>
+              <Stack
+                direction={'row'}
+                spacing={2}
+                sx={{
+                  alignItems: 'center'
+                }}
+              >
                 <Icon fontSize={20} icon={option.icon} />
                 <Box>
-                  <Typography fontWeight={'bold'}>{t(option.name)}</Typography>
-                  <Typography fontSize={12}>
+                  <Typography
+                    sx={{
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    {t(option.name)}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: 12
+                    }}
+                  >
                     {t(option.shortDescription)}
                   </Typography>
                 </Box>
@@ -231,17 +274,25 @@ export default function Hero() {
           }
         }}
       />
-      <Grid container spacing={2} mt={2}>
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          width: '100%',
+          mt: 2
+        }}
+      >
         {displayedTools.map((tool) => (
           <Grid
             onClick={() =>
               navigate(tool.url.startsWith('/') ? tool.url : `/${tool.url}`)
             }
-            item
-            xs={12}
-            md={6}
-            lg={4}
             key={tool.label}
+            size={{
+              xs: 12,
+              md: 6,
+              lg: 4
+            }}
           >
             <Box
               sx={{
@@ -261,8 +312,20 @@ export default function Hero() {
                 height: '100%'
               }}
             >
-              <Stack direction={'row'} spacing={1} alignItems={'center'}>
-                <Typography textAlign={'center'}>{t(tool.label)}</Typography>
+              <Stack
+                direction={'row'}
+                spacing={1}
+                sx={{
+                  alignItems: 'center'
+                }}
+              >
+                <Typography
+                  sx={{
+                    textAlign: 'center'
+                  }}
+                >
+                  {t(tool.label)}
+                </Typography>
                 {bookmarkedToolPaths.length > 0 && (
                   <IconButton
                     onClick={(e) => {

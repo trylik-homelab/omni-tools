@@ -4,6 +4,7 @@ export default defineConfig({
   testDir: './src',
   testMatch: /\.e2e\.(spec\.)?ts$/,
   fullyParallel: true,
+  workers: process.env.CI ? 2 : 4,
   retries: 1,
   reporter: [['html', { open: 'never' }]],
   use: {
@@ -12,7 +13,8 @@ export default defineConfig({
   },
   webServer: {
     command: 'npm run build && npm run serve',
-    url: 'http://localhost:4173'
+    url: 'http://localhost:4173',
+    reuseExistingServer: !process.env.CI
   },
   projects: [
     {

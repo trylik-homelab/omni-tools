@@ -142,10 +142,12 @@ export default function ResizeImage({ title }: ToolComponentProps) {
                     values.maintainAspectRatio &&
                     values.dimensionType === 'height'
                   }
-                  inputProps={{
-                    'data-testid': 'width-input',
-                    type: 'number',
-                    min: 1
+                  slotProps={{
+                    htmlInput: {
+                      'data-testid': 'width-input',
+                      type: 'number',
+                      min: 1
+                    }
                   }}
                 />
                 <TextFieldWithDesc
@@ -156,10 +158,12 @@ export default function ResizeImage({ title }: ToolComponentProps) {
                     values.maintainAspectRatio &&
                     values.dimensionType === 'width'
                   }
-                  inputProps={{
-                    'data-testid': 'height-input',
-                    type: 'number',
-                    min: 1
+                  slotProps={{
+                    htmlInput: {
+                      'data-testid': 'height-input',
+                      type: 'number',
+                      min: 1
+                    }
                   }}
                 />
               </Box>
@@ -175,11 +179,13 @@ export default function ResizeImage({ title }: ToolComponentProps) {
                   value={values.percentage}
                   onOwnChange={(val) => updateField('percentage', val)}
                   description={t('resize.percentageDescription')}
-                  inputProps={{
-                    'data-testid': 'percentage-input',
-                    type: 'number',
-                    min: 1,
-                    max: 1000
+                  slotProps={{
+                    htmlInput: {
+                      'data-testid': 'percentage-input',
+                      type: 'number',
+                      min: 1,
+                      max: 1000
+                    }
                   }}
                 />
               </Box>

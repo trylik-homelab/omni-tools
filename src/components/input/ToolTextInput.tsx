@@ -60,8 +60,10 @@ export default function ToolTextInput({
             backgroundColor: 'background.paper'
           }
         }}
-        inputProps={{
-          'data-testid': 'text-input'
+        slotProps={{
+          htmlInput: {
+            'data-testid': 'text-input'
+          }
         }}
       />
       <InputFooter handleCopy={handleCopy} handleImport={handleImportClick} />

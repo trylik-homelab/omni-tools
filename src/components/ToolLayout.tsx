@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import React, { ReactNode } from 'react';
-import { Helmet } from 'react-helmet';
 import ToolHeader from './ToolHeader';
 import Separator from './Separator';
 import AllTools from './allTools/AllTools';
@@ -55,16 +54,20 @@ export default function ToolLayout({
 
   return (
     <Box
-      width={'100%'}
-      display={'flex'}
-      flexDirection={'column'}
-      alignItems={'center'}
-      sx={{ backgroundColor: 'background.default' }}
+      sx={{
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundColor: 'background.default'
+      }}
     >
-      <Helmet>
-        <title>{`${toolTitle} - OmniTools`}</title>
-      </Helmet>
-      <Box width={'85%'}>
+      <title>{`${toolTitle} - OmniTools`}</title>
+      <Box
+        sx={{
+          width: '85%'
+        }}
+      >
         <ToolHeader
           title={toolTitle}
           description={toolDescription}

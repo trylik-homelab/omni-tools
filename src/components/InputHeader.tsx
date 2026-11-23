@@ -3,7 +3,13 @@ import React from 'react';
 
 export default function InputHeader({ title }: { title: string }) {
   return (
-    <Typography mb={1} fontSize={30} color={'primary'}>
+    <Typography
+      color={'primary'}
+      sx={{
+        mb: 1,
+        fontSize: 30
+      }}
+    >
       {title}
     </Typography>
   );

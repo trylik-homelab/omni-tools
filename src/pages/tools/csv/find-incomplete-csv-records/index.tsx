@@ -175,7 +175,9 @@ export default function FindIncompleteCsvRecords({
               value={values.messageNumber}
               onOwnChange={(val) => updateField('messageNumber', Number(val))}
               type="number"
-              inputProps={{ min: 1 }}
+              slotProps={{
+                htmlInput: { min: 1 }
+              }}
               description={t(
                 'findIncompleteCsvRecords.messageLimitDescription'
               )}

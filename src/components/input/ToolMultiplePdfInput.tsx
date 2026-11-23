@@ -115,9 +115,9 @@ export default function ToolMultiFileInput({
         }}
       >
         <Box
-          width="100%"
-          height="100%"
           sx={{
+            width: '100%',
+            height: '100%',
             overflow: 'auto',
             display: 'flex',
             alignItems: 'center',
@@ -177,7 +177,12 @@ export default function ToolMultiFileInput({
               </Box>
             ))
           ) : (
-            <Typography variant="body2" color="text.secondary">
+            <Typography
+              variant="body2"
+              sx={{
+                color: 'text.secondary'
+              }}
+            >
               {t('toolMultipleInput.noFilesSelected')}
             </Typography>
           )}

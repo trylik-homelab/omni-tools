@@ -16,7 +16,11 @@ const TextFieldWithDesc = ({
   ...props
 }: TextFieldProps & OwnProps) => {
   return (
-    <Box mb={3}>
+    <Box
+      sx={{
+        mb: 3
+      }}
+    >
       <TextField
         placeholder={placeholder}
         sx={{ backgroundColor: 'background.paper' }}
@@ -25,7 +29,12 @@ const TextFieldWithDesc = ({
         {...props}
       />
       {description && (
-        <Typography fontSize={12} mt={1}>
+        <Typography
+          sx={{
+            fontSize: 12,
+            mt: 1
+          }}
+        >
           {description}
         </Typography>
       )}

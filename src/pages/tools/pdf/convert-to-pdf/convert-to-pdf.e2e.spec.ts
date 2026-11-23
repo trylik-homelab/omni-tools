@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { Buffer } from 'buffer';
-import Jimp from 'jimp';
+import { Jimp } from 'jimp';
 
 // OMNI-6: jspdf 3.0.3 → 4.2.1 (CVE-2025-68428, CVE-2026-31938).
 // This tool is the only jspdf consumer, so it guards the upgrade end to end.
@@ -8,8 +8,8 @@ import Jimp from 'jimp';
 const PX_TO_PT = (0.264583 * 72) / 25.4; // service.ts pxToMm, then mm → pt
 
 async function png(width: number, height: number, color: number) {
-  const image = new Jimp(width, height, color);
-  return image.getBufferAsync(Jimp.MIME_PNG);
+  const image = new Jimp({ width, height, color });
+  return image.getBuffer('image/png');
 }
 
 test.describe('Convert images to PDF tool', () => {

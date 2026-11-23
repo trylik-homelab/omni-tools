@@ -125,7 +125,9 @@ export default function ConvertJgpToPng({ title }: ToolComponentProps) {
                 value={values.color}
                 onColorChange={(val) => updateField('color', val)}
                 description={'With this color (to color)'}
-                inputProps={{ 'data-testid': 'color-input' }}
+                slotProps={{
+                  htmlInput: { 'data-testid': 'color-input' }
+                }}
               />
               <TextFieldWithDesc
                 value={values.similarity}

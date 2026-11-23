@@ -5,6 +5,7 @@ import InputHeader from '../InputHeader';
 import InputFooter from './InputFooter';
 import { useTranslation } from 'react-i18next';
 import Editor from '@monaco-editor/react';
+import '../../config/monaco';
 import {
   globalInputHeight,
   codeInputHeightOffset
@@ -57,8 +58,8 @@ export default function ToolCodeInput({
     <Box>
       <InputHeader title={title || t('toolTextInput.input')} />
       <Box
-        height={`${globalInputHeight + codeInputHeightOffset}px`} // The +codeInputHeightOffset compensates for internal padding/border differences between Monaco Editor and MUI TextField
         sx={{
+          height: `${globalInputHeight + codeInputHeightOffset}px`,
           display: 'flex',
           flexDirection: 'column'
         }}

@@ -17,8 +17,9 @@ client-side toolbox (image/video/audio/PDF/text/JSON/CSV/XML/date/math tools).
 
 ## Stack and layout
 
-React 18 + TypeScript + Vite 5 + MUI 5, i18next, Vitest (happy-dom), Playwright, ESLint 8 + Prettier.
-Node 20 in CI and the Dockerfile.
+React 19 + TypeScript 7 + Vite 8 + MUI 9, i18next, Vitest 5 (happy-dom), Playwright, ESLint 10 + Prettier.
+Node 24 in development, CI and the Dockerfile. See `docs/maintenance/OMNI-29.md`
+for compiler API compatibility and the ONNX runtime asset adapter.
 
 - `src/pages/tools/<category>/<tool>/`: one folder per tool, with `index.tsx` (UI), `meta.ts`
   (`defineTool` registration), `service.ts` (pure logic), and `*.test.ts` / `*.e2e.spec.ts`.
@@ -29,19 +30,19 @@ Node 20 in CI and the Dockerfile.
 - `scripts/create-tool.mjs`: scaffolds a tool. `Dockerfile`: node build → nginx:alpine.
 - Path aliases: `@tools/*`, `@components/*`, `@utils/*`, `@assets/*` (see `tsconfig.json`).
 
-## Commands (verified on claude-dev, 2026-09-26)
+## Commands
 
 ```bash
-npm ci                     # install: 1022 pkgs, ~25s (Node 22 locally works; CI uses 20)
-npx vitest run             # unit tests, one-shot: 69 files / 589 tests, ~15s
+npm ci                     # install the committed npm lockfile (Node 24)
+npm test -- --maxWorkers=4  # unit tests, one-shot; bound workers on shared dev hosts
 npm run typecheck          # tsc --noEmit, clean, ~17s
 npm run build              # tsc && vite build → dist/ (gitignored), ~50s
 npm run serve              # preview dist/ → http://localhost:4173
 npm run dev                # vite dev server → http://localhost:5173
 ```
 
-- **`npm test` is Vitest in WATCH mode** and never exits. Agents use `npx vitest run`
-  (add a path to run one tool's tests, e.g. `npx vitest run src/pages/tools/json`).
+- `npm test` runs once. `npm run test:ui` opens the interactive Vitest UI.
+  Add a path to run one tool's tests, e.g. `npm test -- src/pages/tools/json`.
 - **Lint is not clean on `main`, and CI doesn't run it.** `npx eslint src --max-warnings=0` reports
   225 problems, mostly `no-unused-vars` from upstream. `npm run lint` has `--fix` **baked in and
   rewrites files**, so don't run it across `src/`. Lint only the files you touched:
@@ -76,9 +77,10 @@ The compose file is `/home/trylik/apps/omni-tools/docker-compose.yml`. It bind-m
 `default.conf` (the nginx config: SPA fallback, `limit_req` zone `convert`, immutable `/assets/`
 caching; see HOMEL-384 for the 429 fix).
 
-**Merging to `main` does not deploy.** The running image was built 2026-06-17, so PRs #1–#4
-(Swetrix analytics etc.) are merged but **not live**. A deploy means rebuilding
-`omni-tools:trylik` from `main` on ubuntuDocker and `docker compose up -d` in that directory.
+**Merging to `main` does not deploy.** A deploy means rebuilding
+`omni-tools:trylik` from the merged default branch on ubuntuDocker, passing
+`--build-arg COMMIT_SHA=<merged commit>`, and `docker compose up -d` in that directory.
+Verify `/version.json` returns that exact `COMMIT_SHA` before handing off.
 Take `homelab-lock acquire ubuntudocker-apps` first and keep the bind-mounted `default.conf`.
 SSH credentials: vault item `ubuntuDocker trylik SSH`. No other secrets are involved.
 
@@ -110,4 +112,4 @@ SSH credentials: vault item `ubuntuDocker trylik SSH`. No other secrets are invo
 
 - Live site: https://convert.trylik.pl · analytics: https://stats.trylik.pl (Swetrix)
 - Board: planik OMNI · framework: `~/.claude/skills/trylik-framework/SKILL.md`
-- Homelab CI policy: `~/homelab/CICD_STANDARDS.md` (Runner policy section)
+- Homelab CI policy: `~/loop-runner-live/CICD_STANDARDS.md` (Runner policy section)

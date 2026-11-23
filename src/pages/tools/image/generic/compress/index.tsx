@@ -103,7 +103,9 @@ export default function CompressImage({ title }: ToolComponentProps) {
               <TextFieldWithDesc
                 name="maxFileSizeInMB"
                 type="number"
-                inputProps={{ min: 0.1, step: 0.1 }}
+                slotProps={{
+                  htmlInput: { min: 0.1, step: 0.1 }
+                }}
                 description={t('compress.maxFileSizeDescription')}
                 onOwnChange={(value) =>
                   updateNumberField(value, 'maxFileSizeInMB', updateField)
@@ -113,7 +115,9 @@ export default function CompressImage({ title }: ToolComponentProps) {
               <TextFieldWithDesc
                 name="quality"
                 type="number"
-                inputProps={{ min: 10, max: 100, step: 1 }}
+                slotProps={{
+                  htmlInput: { min: 10, max: 100, step: 1 }
+                }}
                 description={t('compress.qualityDescription')}
                 onOwnChange={(value) =>
                   updateNumberField(value, 'quality', updateField)

@@ -1,11 +1,13 @@
-FROM node:20 AS build
+FROM node:24 AS build
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci
 
 COPY . .
+ARG COMMIT_SHA
+ENV COMMIT_SHA=$COMMIT_SHA
 RUN npm run build
 
 FROM nginx:alpine

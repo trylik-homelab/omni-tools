@@ -7,12 +7,31 @@ interface ExampleProps {
 
 export default function ToolInfo({ title, description }: ExampleProps) {
   return (
-    <Stack direction={'row'} alignItems={'center'} spacing={2} mt={4}>
+    <Stack
+      direction={'row'}
+      spacing={2}
+      sx={{
+        alignItems: 'center',
+        mt: 4
+      }}
+    >
       <Box>
-        <Typography mb={2} fontSize={30} color={'primary'}>
+        <Typography
+          color={'primary'}
+          sx={{
+            mb: 2,
+            fontSize: 30
+          }}
+        >
           {title}
         </Typography>
-        <Typography fontSize={20}>{description}</Typography>
+        <Typography
+          sx={{
+            fontSize: 20
+          }}
+        >
+          {description}
+        </Typography>
       </Box>
     </Stack>
   );

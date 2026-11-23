@@ -67,7 +67,9 @@ export default function Split({ title, longDescription }: ToolComponentProps) {
           <TextFieldWithDesc
             name="padding"
             type="number"
-            inputProps={{ min: 0, step: 1 }}
+            slotProps={{
+              htmlInput: { min: 0, step: 1 }
+            }}
             description={t('image:split.pageParameters.padding.description')}
             onOwnChange={(value) => {
               updateNumberField(value, 'padding', updateField);
@@ -84,7 +86,9 @@ export default function Split({ title, longDescription }: ToolComponentProps) {
           <TextFieldWithDesc
             name="pxPerSquareQuantity"
             type="number"
-            inputProps={{ min: 1, step: 1 }}
+            slotProps={{
+              htmlInput: { min: 1, step: 1 }
+            }}
             description={t(
               'image:split.scaleParameters.pxPerSquareQuantity.description'
             )}
@@ -96,7 +100,9 @@ export default function Split({ title, longDescription }: ToolComponentProps) {
           <TextFieldWithDesc
             name="squareQuantity"
             type="number"
-            inputProps={{ min: 1, step: 1 }}
+            slotProps={{
+              htmlInput: { min: 1, step: 1 }
+            }}
             description={t(
               'image:split.scaleParameters.squareQuantity.description'
             )}
@@ -108,7 +114,9 @@ export default function Split({ title, longDescription }: ToolComponentProps) {
           <TextFieldWithDesc
             name="mmPerOneSquare"
             type="number"
-            inputProps={{ min: 1, step: 1 }}
+            slotProps={{
+              htmlInput: { min: 1, step: 1 }
+            }}
             description={t(
               'image:split.scaleParameters.unitsPerOneSquare.description'
             )}

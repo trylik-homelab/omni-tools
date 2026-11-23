@@ -266,14 +266,23 @@ export default async function makeTool(
                 {
                   title: 'Presets',
                   component: (
-                    <Grid container spacing={2} maxWidth={500}>
+                    <Grid
+                      container
+                      spacing={2}
+                      sx={{
+                        width: '100%',
+                        maxWidth: 500
+                      }}
+                    >
                       {calcData.presets?.map((preset) => (
-                        <Grid item xs={12} key={preset.title}>
+                        <Grid key={preset.title} size={12}>
                           <Stack
                             direction={{ xs: 'column', md: 'row' }}
                             spacing={2}
-                            alignItems={'center'}
-                            justifyContent={'space-between'}
+                            sx={{
+                              alignItems: 'center',
+                              justifyContent: 'space-between'
+                            }}
                           >
                             <Typography>{preset.title}</Typography>
                             <Autocomplete
@@ -313,8 +322,10 @@ export default async function makeTool(
                   <Stack
                     direction={'column'}
                     spacing={2}
-                    alignItems={'center'}
-                    justifyContent={'space-between'}
+                    sx={{
+                      alignItems: 'center',
+                      justifyContent: 'space-between'
+                    }}
                   >
                     <Typography>Solve for</Typography>
                     <Select
@@ -343,10 +354,22 @@ export default async function makeTool(
                     </Select>
                   </Stack>
                 ) : (
-                  <Grid container spacing={2} sx={{ mb: 2 }}>
-                    <Grid item xs={10}></Grid>
-                    <Grid item xs={2}>
-                      <Typography fontWeight="bold" align="center">
+                  <Grid
+                    container
+                    spacing={2}
+                    sx={{
+                      width: '100%',
+                      mb: 2
+                    }}
+                  >
+                    <Grid size={10}></Grid>
+                    <Grid size={2}>
+                      <Typography
+                        align="center"
+                        sx={{
+                          fontWeight: 'bold'
+                        }}
+                      >
                         Solve For
                       </Typography>
                     </Grid>
@@ -361,14 +384,23 @@ export default async function makeTool(
                       borderRadius: 1
                     }}
                   >
-                    <Grid container spacing={2} alignItems="center">
-                      <Grid item xs={lessThanSmall ? 12 : 10}>
+                    <Grid
+                      container
+                      spacing={2}
+                      sx={{
+                        width: '100%',
+                        alignItems: 'center'
+                      }}
+                    >
+                      <Grid size={lessThanSmall ? 12 : 10}>
                         <Box>
                           <Stack spacing={2}>
                             <Stack
                               direction={{ xs: 'column', md: 'row' }}
                               spacing={2}
-                              alignItems="center"
+                              sx={{
+                                alignItems: 'center'
+                              }}
                             >
                               <Typography sx={{ minWidth: '8%' }}>
                                 {variable.title}
@@ -400,7 +432,9 @@ export default async function makeTool(
                                 <Stack
                                   direction="row"
                                   spacing={2}
-                                  alignItems="center"
+                                  sx={{
+                                    alignItems: 'center'
+                                  }}
                                 >
                                   <Typography sx={{ minWidth: '8%' }}>
                                     {alt.title}
@@ -452,9 +486,8 @@ export default async function makeTool(
 
                       {!lessThanSmall && (
                         <Grid
-                          item
-                          xs={2}
                           sx={{ display: 'flex', justifyContent: 'center' }}
+                          size={2}
                         >
                           <Radio
                             value={variable.name}
@@ -484,9 +517,15 @@ export default async function makeTool(
                   title: 'Extra outputs',
                   component: (
                     <Box>
-                      <Grid container spacing={2}>
+                      <Grid
+                        container
+                        spacing={2}
+                        sx={{
+                          width: '100%'
+                        }}
+                      >
                         {calcData.extraOutputs?.map((extraOutput) => (
-                          <Grid item xs={12} key={extraOutput.title}>
+                          <Grid key={extraOutput.title} size={12}>
                             <Stack spacing={1}>
                               <Typography>{extraOutput.title}</Typography>
                               <NumericInputWithUnit
@@ -538,11 +577,8 @@ export default async function makeTool(
           });
 
           let result:
-            | nerdamer.NerdamerExpression
-            | nerdamer.NerdamerExpression[] = solveFor(
-            expr,
-            values.outputVariable
-          );
+            nerdamer.NerdamerExpression | nerdamer.NerdamerExpression[] =
+            solveFor(expr, values.outputVariable);
 
           // Sometimes the result is an array
           if (

@@ -118,7 +118,9 @@ export default function ChangeOpacity({ title }: ToolComponentProps) {
                   updateNumberField(val, 'opacity', updateField)
                 }
                 type="number"
-                inputProps={{ step: 0.1, min: 0, max: 1 }}
+                slotProps={{
+                  htmlInput: { step: 0.1, min: 0, max: 1 }
+                }}
               />
               <SimpleRadio
                 onClick={() => updateField('mode', 'solid')}

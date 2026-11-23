@@ -21,7 +21,6 @@ import React, { useEffect } from 'react';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SearchIcon from '@mui/icons-material/Search';
-import { Helmet } from 'react-helmet';
 import UserTypeFilter from '@components/UserTypeFilter';
 import { useTranslation } from 'react-i18next';
 import { I18nNamespaces, validNamespaces } from '../../i18n';
@@ -63,50 +62,78 @@ export default function ToolsByCategory() {
 
   return (
     <Box sx={{ backgroundColor: 'background.default' }}>
-      <Helmet>
-        <title>{rawTitle}</title>
-      </Helmet>
+      <title>{rawTitle}</title>
       <Box
-        padding={{ xs: 1, md: 3, lg: 5 }}
-        display={'flex'}
-        flexDirection={'column'}
-        alignItems={'center'}
-        justifyContent={'center'}
-        width={'100%'}
+        sx={{
+          padding: { xs: 1, md: 3, lg: 5 },
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100%'
+        }}
       >
         <Hero />
       </Box>
       <Divider sx={{ borderColor: theme.palette.primary.main }} />
-      <Box ref={mainContentRef} mt={3} ml={{ xs: 1, md: 2, lg: 3 }} padding={3}>
-        <Stack direction={'row'} justifyContent={'space-between'} spacing={2}>
-          <Stack direction={'row'} alignItems={'center'} spacing={1}>
+      <Box
+        ref={mainContentRef}
+        sx={{
+          mt: 3,
+          ml: { xs: 1, md: 2, lg: 3 },
+          padding: 3
+        }}
+      >
+        <Stack
+          direction={'row'}
+          spacing={2}
+          sx={{
+            justifyContent: 'space-between'
+          }}
+        >
+          <Stack
+            direction={'row'}
+            spacing={1}
+            sx={{
+              alignItems: 'center'
+            }}
+          >
             <IconButton onClick={() => navigate('/')}>
               <ArrowBackIcon color={'primary'} />
             </IconButton>
-            <Typography fontSize={22} color={theme.palette.primary.main}>
+            <Typography
+              color={theme.palette.primary.main}
+              sx={{
+                fontSize: 22
+              }}
+            >
               {t('translation:toolLayout.allToolsTitle', { type: rawTitle })}
             </Typography>
           </Stack>
           <TextField
             placeholder={t('translation:hero.search.placeholder')}
             aria-label={t('translation:hero.search.placeholder')}
-            InputProps={{
-              endAdornment: <SearchIcon />,
-              sx: {
-                borderRadius: 4,
-                backgroundColor: 'background.paper',
-                maxWidth: 400
+            onChange={(event) => setSearchTerm(event.target.value)}
+            slotProps={{
+              input: {
+                endAdornment: <SearchIcon />,
+                sx: {
+                  borderRadius: 4,
+                  backgroundColor: 'background.paper',
+                  maxWidth: 400
+                }
               }
             }}
-            onChange={(event) => setSearchTerm(event.target.value)}
           />
         </Stack>
         <Box
-          width={'100%'}
-          display={'flex'}
-          alignItems={'center'}
-          justifyContent={'center'}
-          my={2}
+          sx={{
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            my: 2
+          }}
         >
           <UserTypeFilter
             userTypes={toolsByCategory?.userTypes ?? undefined}
@@ -114,28 +141,44 @@ export default function ToolsByCategory() {
             onUserTypesChange={setSelectedUserTypes}
           />
         </Box>
-        <Grid container spacing={2}>
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            width: '100%'
+          }}
+        >
           {categoryTools.map((tool, index) => (
-            <Grid item xs={12} md={6} lg={4} key={tool.path}>
+            <Grid
+              key={tool.path}
+              size={{
+                xs: 12,
+                md: 6,
+                lg: 4
+              }}
+            >
               <Stack
+                onClick={() => navigate('/' + tool.path)}
+                direction={'row'}
+                spacing={2}
                 sx={{
+                  alignItems: 'center',
+                  padding: 2,
+                  border: `1px solid ${theme.palette.background.default}`,
+                  borderRadius: 2,
                   backgroundColor: 'background.paper',
+
                   boxShadow: `5px 4px 2px ${
                     theme.palette.mode === 'dark' ? 'black' : '#E9E9ED'
                   }`,
+
                   cursor: 'pointer',
                   height: '100%',
+
                   '&:hover': {
                     backgroundColor: theme.palette.background.hover
                   }
                 }}
-                onClick={() => navigate('/' + tool.path)}
-                direction={'row'}
-                alignItems={'center'}
-                spacing={2}
-                padding={2}
-                border={`1px solid ${theme.palette.background.default}`}
-                borderRadius={2}
               >
                 <Icon
                   icon={tool.icon ?? 'ph:compass-tool-thin'}

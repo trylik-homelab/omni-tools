@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { Buffer } from 'buffer';
 import path from 'path';
-import Jimp from 'jimp';
+import { Jimp } from 'jimp';
 
 test.describe('Create transparent PNG', () => {
   test.beforeEach(async ({ page }) => {

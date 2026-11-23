@@ -19,7 +19,11 @@ const CheckboxWithDesc = ({
   };
 
   return (
-    <Box mb={3}>
+    <Box
+      sx={{
+        mb: 3
+      }}
+    >
       <FormControlLabel
         control={
           <Checkbox
@@ -31,7 +35,12 @@ const CheckboxWithDesc = ({
         label={title}
       />
       {description && (
-        <Typography fontSize={12} mt={1}>
+        <Typography
+          sx={{
+            fontSize: 12,
+            mt: 1
+          }}
+        >
           {description}
         </Typography>
       )}

@@ -15,10 +15,27 @@ export default function ToolOptionGroups({
   vertical?: boolean;
 }) {
   return (
-    <Grid container spacing={2}>
+    <Grid
+      container
+      spacing={2}
+      sx={{
+        width: '100%'
+      }}
+    >
       {groups.map((group) => (
-        <Grid item xs={12} md={vertical ? 12 : 4} key={group.title}>
-          <Typography mb={1} fontSize={22}>
+        <Grid
+          key={group.title}
+          size={{
+            xs: 12,
+            md: vertical ? 12 : 4
+          }}
+        >
+          <Typography
+            sx={{
+              mb: 1,
+              fontSize: 22
+            }}
+          >
             {group.title}
           </Typography>
           {group.component}

@@ -46,7 +46,9 @@ export default function ConvertToPdf({ title }: ToolComponentProps) {
       setResult(pdfFile);
       setImageSizes(imageSizes);
     } catch (error) {
-      throw new Error('Error converting image(s) to PDF:' + error);
+      throw new Error('Error converting image(s) to PDF:' + error, {
+        cause: error
+      });
     } finally {
       setIsProcessing(false);
     }
@@ -107,12 +109,19 @@ export default function ConvertToPdf({ title }: ToolComponentProps) {
                   </RadioGroup>
 
                   {values.pageType === 'full' && imageSizes && (
-                    <Stack spacing={1} mt={1}>
+                    <Stack
+                      spacing={1}
+                      sx={{
+                        mt: 1
+                      }}
+                    >
                       {imageSizes.map((size, index) => (
                         <Typography
                           key={index}
                           variant="body2"
-                          color="text.secondary"
+                          sx={{
+                            color: 'text.secondary'
+                          }}
                         >
                           {t('convertToPdf.options.image')} {index + 1}:{' '}
                           {size.widthMm.toFixed(1)} × {size.heightMm.toFixed(1)}{' '}

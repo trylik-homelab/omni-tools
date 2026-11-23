@@ -122,12 +122,13 @@ export default function ToolFileResult({
         ) : (
           preview && (
             <Box
-              width={'100%'}
-              height={'100%'}
               sx={{
+                width: '100%',
+                height: '100%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+
                 backgroundImage:
                   theme.palette.mode === 'dark' ? null : `url(${greyPattern})`
               }}

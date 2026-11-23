@@ -53,9 +53,21 @@ function ToolLinks() {
     return !!elm;
   }
   return (
-    <Grid container spacing={2} mt={1}>
+    <Grid
+      container
+      spacing={2}
+      sx={{
+        width: '100%',
+        mt: 1
+      }}
+    >
       {isMd && (
-        <Grid item md={12} lg={6}>
+        <Grid
+          size={{
+            md: 12,
+            lg: 6
+          }}
+        >
           <StyledButton
             sx={{ backgroundColor: 'background.paper' }}
             fullWidth
@@ -67,7 +79,12 @@ function ToolLinks() {
         </Grid>
       )}
       {examplesVisible && (
-        <Grid item md={12} lg={6}>
+        <Grid
+          size={{
+            md: 12,
+            lg: 6
+          }}
+        >
           <StyledButton
             fullWidth
             variant="outlined"
@@ -98,7 +115,11 @@ export default function ToolHeader({
   const { t } = useTranslation();
   const [bookmarked, setBookmarked] = useState<boolean>(isBookmarked(path));
   return (
-    <Box my={4}>
+    <Box
+      sx={{
+        my: 4
+      }}
+    >
       <ToolBreadcrumb
         items={[
           { title: 'All tools', link: '/' },
@@ -111,10 +132,34 @@ export default function ToolHeader({
           { title }
         ]}
       />
-      <Grid mt={1} container spacing={2}>
-        <Grid item xs={12} md={8}>
-          <Stack direction={'row'} spacing={2} alignItems={'center'}>
-            <Typography mb={2} fontSize={30} color={'primary'}>
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          width: '100%',
+          mt: 1
+        }}
+      >
+        <Grid
+          size={{
+            xs: 12,
+            md: 8
+          }}
+        >
+          <Stack
+            direction={'row'}
+            spacing={2}
+            sx={{
+              alignItems: 'center'
+            }}
+          >
+            <Typography
+              color={'primary'}
+              sx={{
+                mb: 2,
+                fontSize: 30
+              }}
+            >
               {title}
             </Typography>
             <IconButton
@@ -134,12 +179,23 @@ export default function ToolHeader({
               />
             </IconButton>
           </Stack>
-          <Typography fontSize={20}>{description}</Typography>
+          <Typography
+            sx={{
+              fontSize: 20
+            }}
+          >
+            {description}
+          </Typography>
           <ToolLinks />
         </Grid>
 
         {icon && (
-          <Grid item xs={12} md={4}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 4
+            }}
+          >
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
               <Icon
                 icon={icon}

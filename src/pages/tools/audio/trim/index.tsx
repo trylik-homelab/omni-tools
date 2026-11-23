@@ -59,7 +59,11 @@ export default function Trim({ title, longDescription }: ToolComponentProps) {
             description={t('trim.startTimeDescription')}
             label={t('trim.startTime')}
           />
-          <Box mt={2}>
+          <Box
+            sx={{
+              mt: 2
+            }}
+          >
             <TextFieldWithDesc
               value={values.endTime}
               onOwnChange={(val) => updateField('endTime', val)}
@@ -73,7 +77,11 @@ export default function Trim({ title, longDescription }: ToolComponentProps) {
     {
       title: t('trim.outputFormat'),
       component: (
-        <Box mt={2}>
+        <Box
+          sx={{
+            mt: 2
+          }}
+        >
           <RadioGroup
             row
             value={values.outputFormat}
