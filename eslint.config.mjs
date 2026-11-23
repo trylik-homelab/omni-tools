@@ -64,6 +64,7 @@ export default defineConfig([
     plugins: {
       '@eslint-react': react,
       'react-hooks': reactHooks,
+      tailwindcss,
       omni: { rules: { 'no-unescaped-entities': jsxText } }
     },
     settings: {
