@@ -7,7 +7,13 @@ test(
   { tag: '@scenario:cmwszp6sn01vk3ho39fvsc69u' },
   async ({ page }) => {
     const errors: string[] = [];
+    const externalMonaco: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
+    page.on('request', (request) => {
+      if (request.url().includes('cdn.jsdelivr.net/npm/monaco-editor')) {
+        externalMonaco.push(request.url());
+      }
+    });
     await page.goto('/');
     await expect
       .poll(() => page.evaluate(() => localStorage.getItem('lang')))
@@ -21,6 +27,9 @@ test(
     });
     await expect(page.getByTestId('text-result')).toHaveValue(
       '{"name":"Żółw","count":2}'
+    );
+    await expect(page.locator('.monaco-editor .view-lines')).toContainText(
+      'Żółw'
     );
 
     const png = await new Jimp({
@@ -58,5 +67,6 @@ test(
     const size = pdf.getPage(0).getSize();
     expect(size.width / size.height).toBeCloseTo(2);
     expect(errors).toEqual([]);
+    expect(externalMonaco).toEqual([]);
   }
 );

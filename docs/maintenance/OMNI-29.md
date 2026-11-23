@@ -23,6 +23,10 @@ on the card; the inherited Netlify job does not deploy convert.trylik.pl.
 - The deprecated `@types/react-i18next` stub is removed: react-i18next provides
   its own types. Jimp 1 test fixtures use named imports and its new constructor
   and buffer API. PDF.js worker URLs resolve to the installed worker files.
+- Monaco 0.57 and its workers are bundled locally through the React wrapper's
+  loader configuration; its independent CDN default would otherwise keep running
+  an older editor despite the npm update. The BDD checks the actual editor renders
+  and makes no Monaco CDN requests.
 - Monaco 0.57 pins an older DOMPurify; its override uses the already installed
   patched DOMPurify 3.5 line. IMG.LY's existing Zod 3 advisory remains unchanged
   from the default branch; migrating its schema library is outside these updates.

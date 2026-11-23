@@ -5,6 +5,7 @@ import InputHeader from '../InputHeader';
 import InputFooter from './InputFooter';
 import { useTranslation } from 'react-i18next';
 import Editor from '@monaco-editor/react';
+import '../../config/monaco';
 import {
   globalInputHeight,
   codeInputHeightOffset
