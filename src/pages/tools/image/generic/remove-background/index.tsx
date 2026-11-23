@@ -49,11 +49,16 @@ export default function RemoveBackgroundFromImage({
         );
       }
 
-      // Convert the file to a Blob URL
-      const inputUrl = URL.createObjectURL(fileToProcess);
-
       // Process the image with the background removal library
-      const blob = await removeBackground(inputUrl, {
+      const blob = await removeBackground(fileToProcess, {
+        // Keep IMG.LY's existing CPU / medium model, but use the matching ONNX
+        // loader and WASM emitted by backgroundRemovalAssets in vite.config.
+        publicPath: new URL(
+          `${import.meta.env.BASE_URL}background-removal/`,
+          window.location.origin
+        ).href,
+        device: 'cpu',
+        model: 'medium',
         progress: (progress) => {
           console.log(`Background removal progress: ${progress}`);
         }
