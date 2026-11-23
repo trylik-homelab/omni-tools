@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { getBackgroundRemovalAssets } from './background-removal-assets.mjs';

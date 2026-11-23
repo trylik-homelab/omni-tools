@@ -14,7 +14,7 @@ export async function processPDF(
   const seenImages = new Set<string>();
 
   try {
-    const pdf = await pdfjsLib.getDocument(url).promise;
+    const pdf = await pdfjsLib.getDocument({ url }).promise;
     const extractedImages: File[] = [];
 
     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {

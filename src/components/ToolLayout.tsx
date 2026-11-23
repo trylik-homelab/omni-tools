@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import React, { ReactNode } from 'react';
-import { Helmet } from 'react-helmet';
 import ToolHeader from './ToolHeader';
 import Separator from './Separator';
 import AllTools from './allTools/AllTools';
@@ -63,9 +62,7 @@ export default function ToolLayout({
         backgroundColor: 'background.default'
       }}
     >
-      <Helmet>
-        <title>{`${toolTitle} - OmniTools`}</title>
-      </Helmet>
+      <title>{`${toolTitle} - OmniTools`}</title>
       <Box
         sx={{
           width: '85%'

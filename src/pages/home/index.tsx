@@ -1,7 +1,6 @@
 import { Box, useTheme } from '@mui/material';
 import Hero from 'components/Hero';
 import Categories from './Categories';
-import { Helmet } from 'react-helmet';
 import { useUserTypeFilter } from 'providers/UserTypeFilterProvider';
 import UserTypeFilter from '@components/UserTypeFilter';
 
@@ -32,7 +31,7 @@ export default function Home() {
         backgroundColor: 'background.default'
       }}
     >
-      <Helmet title={'OmniTools'} />
+      <title>OmniTools</title>
       <Hero />
       <Box
         sx={{

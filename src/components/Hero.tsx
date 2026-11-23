@@ -204,9 +204,10 @@ export default function Hero() {
             }}
           />
         )}
-        renderOption={(props, option) => (
+        renderOption={({ key, ...props }, option) => (
           <Box
             component="li"
+            key={key}
             {...props}
             onClick={() => navigate('/' + option.path)}
           >
@@ -277,6 +278,7 @@ export default function Hero() {
         container
         spacing={2}
         sx={{
+          width: '100%',
           mt: 2
         }}
       >

@@ -57,6 +57,7 @@ function ToolLinks() {
       container
       spacing={2}
       sx={{
+        width: '100%',
         mt: 1
       }}
     >
@@ -135,6 +136,7 @@ export default function ToolHeader({
         container
         spacing={2}
         sx={{
+          width: '100%',
           mt: 1
         }}
       >

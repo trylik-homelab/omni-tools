@@ -10,7 +10,14 @@ export default function ToolInputAndResult({
 }) {
   if (input || result) {
     return (
-      <Grid id="tool" container spacing={2}>
+      <Grid
+        id="tool"
+        container
+        spacing={2}
+        sx={{
+          width: '100%'
+        }}
+      >
         {input && (
           <Grid
             size={{

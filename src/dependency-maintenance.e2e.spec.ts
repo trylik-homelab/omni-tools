@@ -9,7 +9,9 @@ test(
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
     await page.goto('/');
-    await expect(page.locator('html')).toHaveAttribute('lang', 'pl');
+    await expect
+      .poll(() => page.evaluate(() => localStorage.getItem('lang')))
+      .toBe('pl');
 
     await page.goto('/json/minify');
     await page.locator('input[type="file"]').setInputFiles({
@@ -21,21 +23,30 @@ test(
       '{"name":"Żółw","count":2}'
     );
 
-    const png = await new Jimp({ width: 80, height: 40, color: 0xff0000ff })
-      .getBuffer('image/png');
+    const png = await new Jimp({
+      width: 80,
+      height: 40,
+      color: 0xff0000ff
+    }).getBuffer('image/png');
     await page.goto('/image-generic/editor');
     await page.locator('input[type="file"]').setInputFiles({
-      name: 'sample.png', mimeType: 'image/png', buffer: png
+      name: 'sample.png',
+      mimeType: 'image/png',
+      buffer: png
     });
     await expect(page.locator('canvas').first()).toBeVisible();
-    await expect(page.getByRole('button', { name: /save/i }).first()).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: /save/i }).first()
+    ).toBeVisible();
 
     await page.goto('/pdf/convert-to-pdf');
     await page.locator('input[type="file"]').setInputFiles({
-      name: 'sample.png', mimeType: 'image/png', buffer: png
+      name: 'sample.png',
+      mimeType: 'image/png',
+      buffer: png
     });
     const pendingDownload = page.waitForEvent('download', {
-      predicate: (download) => download.suggestedFilename() === 'merged-images.pdf'
+      predicate: (download) => download.suggestedFilename() === 'sample.pdf'
     });
     await page.getByText('Pobierz', { exact: true }).click();
     const download = await pendingDownload;

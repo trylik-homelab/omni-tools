@@ -5,6 +5,8 @@ import { Jimp } from 'jimp';
 
 test.describe('Convert JPG to PNG tool', () => {
   test.beforeEach(async ({ page }) => {
+    // The fork defaults to Polish; these assertions use English labels.
+    await page.addInitScript(() => localStorage.setItem('lang', 'en'));
     await page.goto('/png/convert-jgp-to-png');
   });
 

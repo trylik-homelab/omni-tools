@@ -58,7 +58,7 @@ export default function RemoveBackgroundFromImage({
           window.location.origin
         ).href,
         device: 'cpu',
-        model: 'medium',
+        model: 'isnet_fp16',
         progress: (progress) => {
           console.log(`Background removal progress: ${progress}`);
         }
@@ -77,7 +77,8 @@ export default function RemoveBackgroundFromImage({
     } catch (err) {
       console.error('Error removing background:', err);
       throw new Error(
-        'Failed to remove background. Please try a different image or try again later.'
+        'Failed to remove background. Please try a different image or try again later.',
+        { cause: err }
       );
     } finally {
       setIsProcessing(false);

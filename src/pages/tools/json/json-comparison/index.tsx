@@ -58,7 +58,13 @@ export default function JsonComparison({ title }: ToolComponentProps) {
       getGroups={null}
       compute={() => {}}
       inputComponent={
-        <Grid container spacing={2}>
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            width: '100%'
+          }}
+        >
           <Grid
             size={{
               xs: 12,

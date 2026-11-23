@@ -97,6 +97,7 @@ const SingleCategory = function ({
               container
               spacing={2}
               sx={{
+                width: '100%',
                 mt: 2
               }}
             >

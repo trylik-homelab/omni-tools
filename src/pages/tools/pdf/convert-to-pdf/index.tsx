@@ -46,7 +46,9 @@ export default function ConvertToPdf({ title }: ToolComponentProps) {
       setResult(pdfFile);
       setImageSizes(imageSizes);
     } catch (error) {
-      throw new Error('Error converting image(s) to PDF:' + error);
+      throw new Error('Error converting image(s) to PDF:' + error, {
+        cause: error
+      });
     } finally {
       setIsProcessing(false);
     }

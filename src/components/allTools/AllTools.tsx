@@ -41,7 +41,13 @@ export default function AllTools({ title, toolCards }: AllToolsProps) {
           alignItems: 'center'
         }}
       >
-        <Grid container spacing={2}>
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            width: '100%'
+          }}
+        >
           {toolCards.map((card, index) => (
             <Grid
               key={index}

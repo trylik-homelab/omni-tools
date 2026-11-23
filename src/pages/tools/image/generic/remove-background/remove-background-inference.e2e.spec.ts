@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 
 // Real inference: do not mock the model or ONNX runtime. Page-load coverage alone
 // cannot detect a JavaScript/WASM version mismatch (the OMNI-29 migration risk).
@@ -28,7 +28,9 @@ test(
       .locator('input[type="file"]')
       .first()
       .setInputFiles(
-        fileURLToPath(new URL('./fixtures/astronaut.png', import.meta.url))
+        path.resolve(
+          'src/pages/tools/image/generic/remove-background/fixtures/astronaut.png'
+        )
       );
     const result = page.getByRole('img', { name: 'Result', exact: true });
     await expect(result).toBeVisible({ timeout: 150_000 });

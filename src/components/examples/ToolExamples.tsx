@@ -79,7 +79,13 @@ export default function ToolExamples<T>({
           alignItems: 'center'
         }}
       >
-        <Grid container spacing={2}>
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            width: '100%'
+          }}
+        >
           {exampleCards.map((card, index) => (
             <Grid
               key={index}

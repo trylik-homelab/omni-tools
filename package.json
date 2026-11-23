@@ -32,7 +32,7 @@
     "@ffmpeg/core": "^0.12.10",
     "@ffmpeg/ffmpeg": "^0.12.15",
     "@ffmpeg/util": "^0.12.2",
-    "@imgly/background-removal": "^1.6.0",
+    "@imgly/background-removal": "1.7.0",
     "@jimp/types": "^1.7.0",
     "@monaco-editor/react": "^4.7.0",
     "@mui/icons-material": "^9.5.0",
@@ -71,7 +71,7 @@
     "nerdamer-prime": "^1.5.0",
     "notistack": "^3.0.1",
     "omggif": "^1.0.10",
-    "onnxruntime-web": "^1.31.1",
+    "onnxruntime-web": "1.31.1",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^6.5.438",
     "playwright": "^1.65.1",
@@ -80,7 +80,6 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-filerobot-image-editor": "^4.9.1",
-    "react-helmet": "^6.1.0",
     "react-i18next": "^18.0.3",
     "react-image-crop": "^11.1.2",
     "react-konva": "^19.3.2",
@@ -104,7 +103,6 @@
     "@types/qrcode": "^1.5.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@types/react-helmet": "^6.1.11",
     "@types/trusted-types": "^2.0.7",
     "@typescript-eslint/eslint-plugin": "^8.73.0",
     "@typescript-eslint/parser": "^8.73.0",
@@ -140,7 +138,13 @@
     "*.{ts,tsx,js,jsx,json}": "prettier --write"
   },
   "overrides": {
-    "tinypool": "2.1.2"
+    "tinypool": "2.1.2",
+    "@imgly/background-removal": {
+      "onnxruntime-web": "$onnxruntime-web"
+    },
+    "monaco-editor": {
+      "dompurify": "$dompurify"
+    }
   },
   "engines": {
     "node": ">=24.0.0"

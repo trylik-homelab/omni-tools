@@ -128,6 +128,7 @@ export default function NumericInputWithUnit(props: {
       container
       spacing={2}
       sx={{
+        width: '100%',
         alignItems: 'center'
       }}
     >
@@ -181,7 +182,8 @@ export default function NumericInputWithUnit(props: {
         <Select
           fullWidth
           disabled={disableChangingUnit}
-          placeholder={t('numericInputWithUnit.unit')}
+          displayEmpty
+          renderValue={(selected) => selected || t('numericInputWithUnit.unit')}
           sx={{ width: { xs: '75%', sm: '80%', md: '90%' } }}
           value={unit}
           onChange={(event) => {

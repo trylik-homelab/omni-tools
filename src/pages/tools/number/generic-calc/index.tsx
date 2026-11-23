@@ -270,6 +270,7 @@ export default async function makeTool(
                       container
                       spacing={2}
                       sx={{
+                        width: '100%',
                         maxWidth: 500
                       }}
                     >
@@ -353,7 +354,14 @@ export default async function makeTool(
                     </Select>
                   </Stack>
                 ) : (
-                  <Grid container spacing={2} sx={{ mb: 2 }}>
+                  <Grid
+                    container
+                    spacing={2}
+                    sx={{
+                      width: '100%',
+                      mb: 2
+                    }}
+                  >
                     <Grid size={10}></Grid>
                     <Grid size={2}>
                       <Typography
@@ -380,6 +388,7 @@ export default async function makeTool(
                       container
                       spacing={2}
                       sx={{
+                        width: '100%',
                         alignItems: 'center'
                       }}
                     >
@@ -508,7 +517,13 @@ export default async function makeTool(
                   title: 'Extra outputs',
                   component: (
                     <Box>
-                      <Grid container spacing={2}>
+                      <Grid
+                        container
+                        spacing={2}
+                        sx={{
+                          width: '100%'
+                        }}
+                      >
                         {calcData.extraOutputs?.map((extraOutput) => (
                           <Grid key={extraOutput.title} size={12}>
                             <Stack spacing={1}>
@@ -562,11 +577,8 @@ export default async function makeTool(
           });
 
           let result:
-            | nerdamer.NerdamerExpression
-            | nerdamer.NerdamerExpression[] = solveFor(
-            expr,
-            values.outputVariable
-          );
+            nerdamer.NerdamerExpression | nerdamer.NerdamerExpression[] =
+            solveFor(expr, values.outputVariable);
 
           // Sometimes the result is an array
           if (
