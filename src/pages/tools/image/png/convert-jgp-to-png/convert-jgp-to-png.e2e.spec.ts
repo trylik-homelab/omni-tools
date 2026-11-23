@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { Buffer } from 'buffer';
 import path from 'path';
-import Jimp from 'jimp';
+import { Jimp } from 'jimp';
 
 test.describe('Convert JPG to PNG tool', () => {
   test.beforeEach(async ({ page }) => {
