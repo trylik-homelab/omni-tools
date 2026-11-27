@@ -6,7 +6,12 @@ import path from 'node:path';
 // cannot detect a JavaScript/WASM version mismatch (the OMNI-29 migration risk).
 test(
   'removes a photo background with ONNX 1.31.1 without uploading the image',
-  { tag: '@scenario:cmwt4u7yn02z53ho30himwdod' },
+  {
+    tag: [
+      '@scenario:cmwt4u7yn02z53ho30himwdod', // OMNI-29: ONNX runtime match
+      '@scenario:cmwzia54o007f32mxkbavubp4' // OMNI-10: zod override
+    ]
+  },
   async ({ page }, testInfo) => {
     test.setTimeout(180_000);
     const errors: string[] = [];

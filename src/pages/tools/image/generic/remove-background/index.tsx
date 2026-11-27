@@ -59,7 +59,9 @@ export default function RemoveBackgroundFromImage({
         ).href,
         device: 'cpu',
         model: 'isnet_fp16',
-        progress: (progress) => {
+        // Typed here because @imgly/background-removal's declarations are
+        // written for zod 3, and package.json overrides it to zod 4 (OMNI-10).
+        progress: (progress: string) => {
           console.log(`Background removal progress: ${progress}`);
         }
       });
