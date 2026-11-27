@@ -140,7 +140,8 @@
   "overrides": {
     "tinypool": "2.1.2",
     "@imgly/background-removal": {
-      "onnxruntime-web": "$onnxruntime-web"
+      "onnxruntime-web": "$onnxruntime-web",
+      "zod": "^4.6.6"
     },
     "monaco-editor": {
       "dompurify": "$dompurify"
